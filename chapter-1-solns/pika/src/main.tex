@@ -10,14 +10,66 @@
 % \tableofcontents
 
 \begin{ex}
-  \cite[Ex-1.6]{aluffi_algebra_2009}
+  \cite[Ex-1.6]{aluffi_algebra_2009}x-
   Define a relation \(\sim\) on \(\bR\) as \(a \sim b\) if \(a-b\in \bZ\). 
-  Show that \(\sim\) is an equivalence relation on \(R\). Find a \emph{compelling} 
-  description for 
+  Show that \(\sim\) is an equivalence relation on \(\bR\). Find a \emph{compelling} 
+  description for \(\bR/\sim\). Do the same for the relation \(\equiv\) 
+  on the plane \(\bR\times \bR\) defined by \((a_{1}, a_{2}) \equiv (b_{1}, b_{2}) \iff b_{1}-a_{1} \in \bZ\) and \(b_{2}-a_{2}\in \bZ\).
 \end{ex}
 \begin{proof}
+  Reflexivity holds because \(x-x=0\in \bZ\).
+  Symmetry is due to \(y-x = -(x-y)\in \bZ\).
+  Finally, for \(x,y,z \in \bR\) with \(x - y = a \in \bZ\) and \(y - z = b \in \bZ\), 
+  we can write \(x - z = x - y - (z - y) = a + b \in \bZ\) which establishes 
+  transitivity. This completes the porof that \(\sim\) is an equivalence relation. 
+
+  Next, we will show that \(\quotient{\bR}{\sim}\) is in bijection to the following set: 
+  \[
+    S^{1} \coloneqq \left\{x \in \bR^{2}; \|x\| = 1\right\}
+  \]
+
+  This is effectively the same set as the boundary of the unit ball in \(\bC\).
+
+  For this we introduce a map 
+  \[
+    g : \bR \to S^{1}
+  \]
+  defined by
+  \[
+    x \mapsto e^{2\pi i x}
+  \]
+  That \(g\) is well defined is obvious from intro analysis.
+  We know from intro analysis that \(g\) is a surjection. 
+
+  Then, we shall invoke \cite[Theorem-2.7]{aluffi_algebra_2009} on the diagram
+  \[
+    \begin{tikzcd}
+      \bR && S^{1} \\
+      \\
+      {\quotient{\bR}{\sim}}
+      \arrow["g", from=1-1, to=1-3]
+      \arrow["p"', from=1-1, to=3-1]
+      \arrow["f"', from=3-1, to=1-3]
+    \end{tikzcd}
+  \]
+  This gives us a well defined injection \(f:\quotient{\bR}{\sim}\to S^{1}\). 
+  We get that \(\image f = \image g\) and since \(g\) is surjective \(\image f = S^{1}\)
+  which completes the proof.
+
+  Next, we make an important observation. 
+  \begin{observe}
+    Since any pair of points in any set in \(\quotient{\bR}{\sim}\) have the same 
+    fractional part, quotienting \(\bR\) by \(\sim\) has the effect of 
+    treating the integral part of any real as insignificant and of course, those reals with 
+    identical fractional parts are identified together. 
+    Motivated by this, hereafter, we will simply use the notation \[\quotient{\bR}{\bZ}\]
+    for \(\quotient{\bR}{\sim}\).
+  \end{observe}
+
+  Since \(\quotient{\bR}{\sim} \cong S^{1}\)
+
 \end{proof}
 
-
+\cite{aluffi_algebra_2009} \cite{axler_linear_nodate}
 \printbibliography
 \end{document}
