@@ -199,7 +199,129 @@
   It is worth mentioning that the second half of \ref{ex:rmodziscirclegroup}
   could be proved by invoking the universal property of the quotient \(\quotient{\bR^{2}}{\bZ^{2}}\)
   instead of invoking the universal property of the product \(\quotient{\bR}{\bZ}\times \quotient{\bR}{\bZ}\).
+
+  In fact, we can combine the two universal properties together. We can use 
+  the property on \(\quotient{\bR^{2}}{\bZ^{2}}\) to find a unique map \(s\) that 
+  is injective and realize that \(s\) is the same as \(h\) by invoking 
+  both universal properties.
+
+
+  % https://q.uiver.app/#q=WzAsNixbMiwyLCJcXG1hdGhiYntSfS9cXG1hdGhiYntafSBcXHRpbWVzIFxcbWF0aGJie1J9L1xcbWF0aGJie1p9Il0sWzIsMCwiXFxtYXRoYmJ7Un1eezJ9L1xcbWF0aGJie1p9XnsyfSJdLFszLDYsIlxcYnVsbGV0Il0sWzAsMywiXFxtYXRoYmJ7Un0vXFxtYXRoYmJ7Wn0iXSxbNCwzLCJcXG1hdGhiYntSfS9cXG1hdGhiYntafSJdLFswLDAsIlxcbWF0aGJie1J9XnsyfSJdLFsxLDAsImg9cyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsImYiLDJdLFswLDMsIlxccGlfMSJdLFsxLDQsImciXSxbMCw0LCJcXHBpXzIiLDJdLFs1LDEsInAiXSxbNSwwLCJyIl1d
+  \[\begin{tikzcd}
+    {\mathbb{R}^{2}} && {\mathbb{R}^{2}/\mathbb{Z}^{2}} && \\
+    \\
+    && {\mathbb{R}/\mathbb{Z} \times \mathbb{R}/\mathbb{Z}} \\
+    {\mathbb{R}/\mathbb{Z}} &&&& {\mathbb{R}/\mathbb{Z}} \\
+    \arrow["p", from=1-1, to=1-3]
+    \arrow["r", from=1-1, to=3-3]
+    \arrow["{h,s}", dashed, from=1-3, to=3-3]
+    \arrow["f"', from=1-3, to=4-1]
+    \arrow["g", from=1-3, to=4-5]
+    \arrow["{\pi_1}", from=3-3, to=4-1]
+    \arrow["{\pi_2}"', from=3-3, to=4-5]
+  \end{tikzcd}\]
+  
+  Here, \(p\) is the projection of \(\mathbb{R}^{2}\) onto the quotient \(\quotient{\bR^{2}}{\bZ^{2}}\),
+  \(r:\bR^{2}\to \quotient{\bR}{\bZ} \times \quotient{\bR}{\bZ}\) is the map 
+  \((x,y)\mapsto (x+\bZ, y+\bZ)\).
+  
 \end{remark}
+
+\begin{ex}\cite[Prop-2.1.2]{aluffi_algebra_2009}
+	Let \(f:A\to B\) be a function between any two sets \(A\) and \(B\).
+	Prove that \(f\) has a right inverse if and only if \(f\) is surjective.
+\end{ex}
+\begin{proof}
+  (\(\Longrightarrow\)) Suppose \(\image f = B\). Then, for any \(b \in B\) 
+  the set \(f^{-1}\left(\{b\}\right)\) (the fiber of \(f\) at \(b\)) is nonempty. 
+  So, by axiom of choice, for every \(b \in B\) we choose a \(b^{\dagger}\in A\) so that 
+  \(b^{\dagger} \in f^{-1}\left(\{b\}\right)\). By this, we define the map
+
+  \begin{align*}
+    g \colon B &\longrightarrow A \\
+    b &\longmapsto a \in f^{-1}(\{b\})
+  \end{align*}
+
+  next, take any \(b \in b\). then, \((f\circ g)(b) = f(g(b)) = f(a) = b\). therefore, 
+  \(f \circ g = \one_{B}\).
+
+  (\(\Longleftarrow\))
+  Suppose there is a map \(g: B \to A\) so that \(f \circ g = \one_{B}\).
+  Then, pick any \(b \in B\). Then, \(g(b)\) is an element of \(A\) so that 
+
+  \begin{equation}
+    f(g(b)) = b
+  \end{equation}
+
+  proving that \(\image f = B\).
+
+\end{proof}
+\begin{remark}
+  Notice that we require no further condition on the sets \(A\) and \(B\). 
+\end{remark}
+
+
+
+
+
+\begin{ex}\cite[Ex-2.6]{aluffi_algebra_2009}
+  Explain how any function \(f: A \rightarrow B\) determines a section of the projection 
+  \(\pi_{A}: A\times B \to A\).
+\end{ex}
+\begin{proof}
+
+  The map \(g : A \to A \times B\) defined by \(a \mapsto (a, f(a))\)
+  determines a section of \(\pi_{A}\). Indeed, given any \(a\in A\), 
+
+  \begin{align*}
+    (\pi_{A}\circ g)(a) &= \pi_{A}(g(a))\\
+                        &= \pi_{A}((a,f(a)) \\
+                        &= a
+  \end{align*}
+  
+  Therefore, \(\pi\circ g = \one_{A}\).
+
+\end{proof}
+
+\begin{definition}\label{def:epimorphism}
+  A function \(f: A\to B\) between any two sets \(A\) and \(B\) is said to be an 
+  \emph{epimorphism} if for every set \(Z\) and a pair of maps 
+  \(\alpha',~\alpha'': B \to Z\) it holds that 
+  \(\alpha' \circ f = \alpha'' \circ f\) then \(\alpha' = \alpha''\).
+\end{definition}
+\begin{ex}\cite[Ex-2.5]{aluffi_algebra_2009}
+  A function \(f: A \to B\) between any two sets \(A\) and \(B\) is surjective if and 
+  only if it is an epimorphism (\ref{def:epimorphism}).
+\end{ex}
+\begin{proof}
+  \((\Longrightarrow)\) Suppose \(f: A\to B\) is surjective. Then, there is a function 
+  \(g: B \to A\) so that \(f \circ g = \one_{B}\).
+
+  Suppose \(Z\) is any set and \(\alpha',\alpha'' \colon B \to Z\) are any pair of 
+  functions so that \(\alpha' \circ f = \alpha'' \circ f\).
+
+  This implies that 
+
+  \[
+    \alpha' \circ (f \circ g) = \alpha'' \circ (f \circ g)
+  \]
+
+  from which we see that 
+
+  \[
+    \alpha' \circ \one_{B} = \alpha'' \circ \one_{B}
+  \]
+
+  from which we derive that \(\alpha' = \alpha''\). This completes one side of the proof. 
+
+  \((\Longleftarrow)\)
+  Now, suppose \(f\) is an epimorphism. Set \(Z \coloneqq \{0,1\}\), \(\alpha' \coloneqq \one_{B}\) 
+  and \(\alpha'' \coloneqq \one_{\image f}\).
+  Notice that \(\alpha'\) and \(\alpha''\) agree on the image of \(f\). Therefore, by the 
+  fact that \(f\) is an epimorphism, they are identical. Since the indicators of two sets 
+  are identical, the two sets are equal and this concludes our proof.
+\end{proof}
+
 
 \printbibliography
 \end{document}
