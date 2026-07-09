@@ -9,8 +9,8 @@
 \maketitle
 % \tableofcontents
 
-\begin{ex}
-  \cite[Ex-1.6]{aluffi_algebra_2009}x-
+\begin{ex}\label{ex:rmodziscirclegroup}
+  \cite[Ex-1.6]{aluffi_algebra_2009}
   Define a relation \(\sim\) on \(\bR\) as \(a \sim b\) if \(a-b\in \bZ\). 
   Show that \(\sim\) is an equivalence relation on \(\bR\). Find a \emph{compelling} 
   description for \(\bR/\sim\). Do the same for the relation \(\equiv\) 
@@ -25,10 +25,8 @@
 
   Next, we will show that \(\quotient{\bR}{\sim}\) is in bijection to the following set: 
   \[
-    S^{1} \coloneqq \left\{x \in \bR^{2}; \|x\| = 1\right\}
+    S^{1} \coloneqq \left\{x \in \bC; \|x\| = 1\right\}
   \]
-
-  This is effectively the same set as the boundary of the unit ball in \(\bC\).
 
   For this we introduce a map 
   \[
@@ -41,7 +39,7 @@
   That \(g\) is well defined is obvious from intro analysis.
   We know from intro analysis that \(g\) is a surjection. 
 
-  Then, we shall invoke \cite[Theorem-2.7]{aluffi_algebra_2009} on the diagram
+  Then, we shall invoke \cite[Thm-2.7]{aluffi_algebra_2009} on the diagram
   \[
     \begin{tikzcd}
       \bR && S^{1} \\
@@ -61,15 +59,147 @@
     Since any pair of points in any set in \(\quotient{\bR}{\sim}\) have the same 
     fractional part, quotienting \(\bR\) by \(\sim\) has the effect of 
     treating the integral part of any real as insignificant and of course, those reals with 
-    identical fractional parts are identified together. 
-    Motivated by this, hereafter, we will simply use the notation \[\quotient{\bR}{\bZ}\]
+    identical fractional parts are identified as equivalent. 
+    Motivated by this, hereafter, we will simply use the notation \(\quotient{\bR}{\bZ}\)
     for \(\quotient{\bR}{\sim}\).
   \end{observe}
 
-  Since \(\quotient{\bR}{\sim} \cong S^{1}\)
+  Since \(\quotient{\bR}{\bZ} \cong S^{1}\) we are tempted to believe that
+  \(\quotient{\bR^{2}}{\bZ^{2}}\) is in bijection with \(S^{1}\times S^{1}\).
+  We shall prove this. 
 
+  First, notice that there is a bijection \(f: \quotient{\bR}{\bZ} \to S^{1}\). 
+  This gives us a bijection
+
+  \[
+    \quotient{\bR}{\bZ} \times \quotient{\bR}{\bZ} \to S^{1} \times S^{1}
+  \]
+
+  by the rule
+
+  \[
+    (x + \bZ, y + \bZ) \mapsto (f(x), f(y))
+  \]
+
+  So, we simply need to prove that there is a bijection between 
+  \(\quotient{\bR^{2}}{\bZ^{2}}\) and \(\quotient{\bR}{\bZ}\times\quotient{\bR}{\bZ}\).
+
+  Here, we shall use the universal property of products as in 
+  \cite[Prop-1.3.1]{kim_rough_2018}.
+
+  For this, consider the function
+
+  \[
+    f : \quotient{\bR^{2}}{\bZ^{2}} \to \quotient{\bR}{\bZ}
+  \]
+
+  defined by 
+
+  \[
+    (x,y) + \bZ \times \bZ \mapsto x + \bZ
+  \]
+
+  and the function 
+
+  \[
+    g: \quotient{\bR^{2}}{\bZ^{2}} \to \quotient{\bR}{\bZ} 
+  \]
+
+  defined by 
+
+  \[
+    (x,y) + \bZ \times \bZ \mapsto y + \bZ
+  \]
+
+  Next, consider the diagram 
+
+  % https://q.uiver.app/#q=WzAsNixbMiwyLCJcXG1hdGhiYntSfS9cXG1hdGhiYntafSBcXHRpbWVzIFxcbWF0aGJie1J9L1xcbWF0aGJie1p9Il0sWzIsMCwiXFxtYXRoYmJ7Un1eezJ9L1xcbWF0aGJie1p9XnsyfSJdLFs0LDYsIlNeMSBcXHRpbWVzIFNeMSJdLFszLDYsIlxcYnVsbGV0Il0sWzAsMywiXFxtYXRoYmJ7Un0vXFxtYXRoYmJ7Wn0iXSxbNCwzLCJcXG1hdGhiYntSfS9cXG1hdGhiYntafSJdLFsxLDBdLFsyLDNdLFsxLDQsImYiLDJdLFswLDQsIlxccGlfMSJdLFsxLDUsImciXSxbMCw1LCJcXHBpXzIiLDJdXQ==
+  \[
+    \begin{tikzcd}
+      && {\mathbb{R}^{2}/\mathbb{Z}^{2}} && \\
+      \\
+      && {\mathbb{R}/\mathbb{Z} \times \mathbb{R}/\mathbb{Z}} \\
+      {\mathbb{R}/\mathbb{Z}} &&&& {\mathbb{R}/\mathbb{Z}} \\
+      \\
+      \arrow[dashed, "h"', from=1-3, to=3-3]
+      \arrow["f"', from=1-3, to=4-1]
+      \arrow["g", from=1-3, to=4-5]
+      \arrow["{\pi_1}", from=3-3, to=4-1]
+      \arrow["{\pi_2}"', from=3-3, to=4-5]
+    \end{tikzcd}
+  \]
+
+  By universal properties of products, there is a map 
+
+  \[
+    h: \quotient{\bR^{2}}{\bZ^{2}} \to \quotient{\bR}{\bZ}\times \quotient{\bR}{\bZ}
+  \]
+
+  which satisfies 
+
+  \[
+    f = \pi_{1}\circ h, \qquad g = \pi_{2}\circ h
+  \]
+
+  It is obvious that \(f\) and \(g\) are surjective and from this follows the surjectivity of \(h\).
+
+  % We argue that \(h\) is a surjection. Indeed, take any 
+  % \((x + \bZ, y + \bZ) \in \quotient{\bR}{\bZ}\times \quotient{\bR}{\bZ}\)
+  %
+  % For this, take \((x,y) + \bZ\times \bZ \in \quotient{\bR^{2}}{\bZ^{2}}\) and notice that 
+  % \(f((x,y) + \bZ\times \bZ) = x + \bZ\) and \(g((x,y) + \bZ \times \bZ) = y + \bZ\)
+  %
+  % This tells us that \((\pi_1 \circ h)((x,y)+\bZ\times \bZ) = x + \bZ\) 
+  % and \((\pi_2 \circ h)((x,y)+\bZ \times \bZ) = y + \bZ\).
+  %
+  % From this it is obvious that \(h((x,y) + \bZ\times \bZ) = (x+\bZ, y+\bZ)\) so, \(h\) 
+  % is surjective. 
+
+  Next, take any 
+
+  \[
+    (x,y) + \bZ^{2} \in \quotient{\bR^{2}}{\bZ^{2}}
+  \]
+
+  and 
+
+  \[
+    (x', y') + \bZ^{2} \in \quotient{\bR^{2}}{\bZ^{2}}
+  \]
+
+  so that \(h\left((x,y) + \bZ^{2}\right) = h\left((x',y') + \bZ^{2}\right)\)
+
+  Then, \((\pi_1\circ h) ((x,y) + \bZ^{2}) = x+\bZ\) and \((\pi_2 \circ h) ((x,y)+\bZ^{2}) = y+\bZ\)
+  and a similar result holds for \((x',y')+\bZ^{2}\).
+
+  So, if 
+
+  \[
+    (x+\bZ, y+\bZ) = (x'+\bZ, y'+\bZ)
+  \]
+  
+  then we have 
+
+  \[
+    x+\bZ = x'+\bZ, \qquad y+\bZ = y'+\bZ 
+  \]
+
+  This tells us that \(x \equiv x' \pmod{\bZ}\) and \(y \equiv y' \pmod{\bZ}\). This is 
+  precisely the condition for 
+
+  \[
+    (x,y) \equiv (x', y') \pmod{\bZ^{2}}
+  \]
+
+  which is another way of saying that \((x,y)+\bZ^{2} = (x',y')+\bZ^{2}\) which 
+  proves that \(h\) is an injection thereby completing the proof.
 \end{proof}
 
-\cite{aluffi_algebra_2009} \cite{axler_linear_nodate}
+\begin{remark} 
+  It is worth mentioning that the second half of \ref{ex:rmodziscirclegroup}
+  could be proved by invoking the universal property of the quotient \(\quotient{\bR^{2}}{\bZ^{2}}\)
+  instead of invoking the universal property of the product \(\quotient{\bR}{\bZ}\times \quotient{\bR}{\bZ}\).
+\end{remark}
+
 \printbibliography
 \end{document}
