@@ -239,10 +239,10 @@
 
   \begin{align*}
     g \colon B &\longrightarrow A \\
-    b &\longmapsto a \in f^{-1}(\{b\})
+    b &\longmapsto b^{\dagger} \in f^{-1}(\{b\})
   \end{align*}
 
-  next, take any \(b \in b\). then, \((f\circ g)(b) = f(g(b)) = f(a) = b\). therefore, 
+  next, take any \(b \in b\). then, \((f\circ g)(b) = f(g(b)) = f(b^{\dagger}) = b\). therefore, 
   \(f \circ g = \one_{B}\).
 
   (\(\Longleftarrow\))
@@ -271,7 +271,7 @@
 \begin{proof}
 
   The map \(g : A \to A \times B\) defined by \(a \mapsto (a, f(a))\)
-  determines a section of \(\pi_{A}\). Indeed, given any \(a\in A\), 
+  is a section of \(\pi_{A}\). Indeed, given any \(a\in A\), 
 
   \begin{align*}
     (\pi_{A}\circ g)(a) &= \pi_{A}(g(a))\\
@@ -321,6 +321,61 @@
   fact that \(f\) is an epimorphism, they are identical. Since the indicators of two sets 
   are identical, the two sets are equal and this concludes our proof.
 \end{proof}
+
+\begin{definition}
+  A category \(\catC\) consists of 
+  \begin{itemize}
+
+    \item A class \(\Obj(\catC)\) of \emph{objects} of the category and
+
+    \item for every pair of objects \(A,B\) of \(\catC\), a set \(\HomC(A,B)\)
+      of \emph{morphisms}, with the following properties: 
+
+      \begin{enumerate}
+
+        \item For every object \(A\) of \(\catC\) (at least) one morphism
+          \(1_{A}\in \HomC(A, A)\), called the \emph{identity} on \(A\).
+
+        \item Any two morphisms \(f\in \HomC(A,B)\) and 
+          \(g\in \HomC(B,C)\) determine another morphism, denoted 
+          \(gf\in \HomC(A,C)\). That is, for every triple of objects \(A,B\) and 
+          \(C\) of \(\catC\), there is a function (of sets)
+
+          \[
+            \HomC(A,B) \times \HomC(B,C) \longrightarrow \HomC(A, C)
+          \]
+
+          and the image of the pair \(f,g\) is denoted \(gf\).
+
+        \item The previous composition law is associative: if \(f\in \HomC(A,B)\), 
+          \(g\in \HomC(B,C)\) and \(h\in \HomC(C, D)\), then 
+
+          \[
+            (hg)f = h(gf)
+          \]
+
+        \item The identity morphisms are identities with respect to composition, that is,
+          for all \(f\in \HomC(A,B)\) we have 
+
+          \[
+            f1_{A} = f, \qquad 1_{B}f = f
+          \]
+
+      \end{enumerate}
+
+      A further requirement is that \(\HomC(A,B)\) and \(\HomC(C,D)\) 
+      have to be disjoint unless \(A = C\) and \(B = D\).
+  \end{itemize}
+  
+\end{definition}
+
+\begin{notation}[Endomorphism]
+  A morphism \(f\) of an object \(A\in \Obj(\catC)\) of a category \(\catC\) to itself is 
+  called an \emph{endomorphism}; \(\HomC(A,A)\) is denoted by \(\End_{\catC}(A)\)
+\end{notation}
+
+\(\mathfrak{Set}\)
+
 
 
 \printbibliography
