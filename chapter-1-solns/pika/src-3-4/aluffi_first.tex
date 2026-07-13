@@ -1,0 +1,921 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[14pt,twoside,american]{extarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2cm,rmargin=3cm}
+\usepackage{setspace}
+\usepackage{wasysym}
+\usepackage[authoryear]{natbib}
+\onehalfspacing
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage[default]{comicneue}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=black,  %choose some color if you want links to stand out
+}
+
+% \usepackage{url}
+
+%\usepackage[style=alphabetic]{biblatex}
+%\addbibresource{bibliography.bib}
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{csquotes}
+% \usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+% \usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{amsmath, mathtools, amssymb}
+% \usepackage{amsfonts} 
+\usepackage{newpxtext} 
+\usepackage[euler-digits]{eulervm}
+%\usepackage{libertine,libertinust1math}
+
+%\usepackage[sc,osf]{mathpazo}   % With old-style figures and real smallcaps.
+%\linespread{1.025}              % Palatino leads a little more leading
+
+% Euler for math and numbers
+%\usepackage[euler-digits,small]{eulervm}
+\usepackage{extarrows}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{systeme}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+
+
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+\let\epsilon\varepsilon
+\newcommand\contra{\scalebox{1.1}{$\lightning$}}
+\let\emptyset\varnothing
+
+
+\definecolor{correct}{HTML}{009900}
+\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand\green[1]{{\color{correct}{#1}}}
+
+
+\newcommand\hr{
+	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+
+
+% hide parts
+\newcommand\hide[1]{}
+
+
+
+% si unitx
+\usepackage{siunitx}
+\sisetup{locale = FR}
+% \renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\mat[1]{\mathbf{#1}}
+
+
+% tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+
+
+\tikzset{
+	force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
+}
+
+% theorems
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+
+% \theoremstyle{plain}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+		}
+]{thmgreenbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+		}
+]{thmbluebox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RoyalPurple}, bodyfont=\normalfont\itshape,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=Rhodamine, backgroundcolor=Rhodamine!5,
+		}
+]{thmpinkbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue
+		}
+]{thmblueline}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont\itshape,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!5,
+		}
+]{thmredbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!1,
+		},
+	qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+		},
+]{thmexplanationbox}
+
+\declaretheorem[style=thmgreenbox, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmbluebox, name=Example, numberwithin=section]{eg}
+\declaretheorem[style=thmpinkbox, name=Exercise, numberwithin=section]{ex}
+\declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{prop}
+\declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
+\declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
+\declaretheorem[style=thmredbox, numbered=no, name=Corollary, numberwithin=section]{corollary}
+
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+
+\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+
+\declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+
+\newtheorem*{uovt}{UOVT}
+\newtheorem*{notation}{Notation}
+\newtheorem*{previouslyseen}{As previously seen}
+\newtheorem*{problem}{Problem}
+\newtheorem*{observe}{Observe}
+\newtheorem*{property}{Property}
+\newtheorem*{intuition}{Intuition}
+
+
+\usepackage{etoolbox}
+\AtEndEnvironment{vb}{\null\hfill$\diamond$}%
+\AtEndEnvironment{intermezzo}{\null\hfill$\diamond$}%
+% \AtEndEnvironment{opmerking}{\null\hfill$\diamond$}%
+
+% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+\makeatletter
+% \def\thm@space@setup{%
+%   \thm@preskip=\parskip \thm@postskip=0pt
+% }
+
+\newcommand{\oefening}[1]{%
+	\def\@oefening{#1}%
+	\subsection*{Oefening #1}
+}
+
+\newcommand{\suboefening}[1]{%
+	\subsubsection*{Oefening \@oefening.#1}
+}
+
+\newcommand{\exercise}[1]{%
+	\def\@exercise{#1}%
+	\subsection*{Exercise #1}
+}
+
+\newcommand{\subexercise}[1]{%
+	\subsubsection*{Exercise \@exercise.#1}
+}
+
+
+\usepackage{xifthen}
+
+\def\testdateparts#1{\dateparts#1\relax}
+\def\dateparts#1 #2 #3 #4 #5\relax{
+	\marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
+}
+
+\def\@lesson{}%
+\newcommand{\lesson}[3]{
+	\ifthenelse{\isempty{#3}}{%
+		\def\@lesson{Lecture #1}%
+	}{%
+		\def\@lesson{Lecture #1: #3}%
+	}%
+	\subsection*{\@lesson}
+	\testdateparts{#2}
+}
+
+% \renewcommand\date[1]{\marginpar{#1}}
+
+
+% fancy headers
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% \fancyhead[LE,RO]{Gilles Castel}
+% \fancyhead[RO,LE]{\@lesson}
+% \fancyhead[RE,LO]{}
+% \fancyfoot[LE,RO]{\thepage}
+% \fancyfoot[C]{\leftmark}
+% \fancyhf{}
+\fancyhf[roh,leh]{\thepage}
+\fancyhf[reh]{\nouppercase{\leftmark}}
+\fancyhf[loh]{\nouppercase{\rightmark}}
+\cfoot{}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\makeatother
+
+
+
+
+% notes
+% \usepackage{todonotes}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{breakable}
+\newenvironment{verbetering}{\begin{tcolorbox}[
+			arc=0mm,
+			colback=white,
+			colframe=green!60!black,
+			title=Opmerking,
+			fonttitle=\sffamily,
+			breakable
+		]}{\end{tcolorbox}}
+
+\newenvironment{noot}[1]{\begin{tcolorbox}[
+			arc=0mm,
+			colback=white,
+			colframe=white!60!black,
+			title=#1,
+			fonttitle=\sffamily,
+			breakable
+		]}{\end{tcolorbox}}
+
+
+\newcommand{\outermeasure}{{{\mu^{\star}}}}
+
+%\def\mbb#1{\mathbb{#1}}
+%\def\mfk#1{\mathfrak{#1}}
+
+\newcommand{\inv}{^{\raisebox{.2ex}{$\scriptscriptstyle-1$}}}
+
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem*{example*}{\protect\examplename}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{example}[thm]{\protect\examplename}
+\newtheorem*{xca*}{\protect\exercisename}
+\newtheorem*{sol*}{\protect\solutionname}
+\theoremstyle{remark}
+\newtheorem*{rem*}{\protect\remarkname}
+\usepackage{babel}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\remarkname}{Remark}
+\providecommand{\solutionname}{Solution}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\title{Aluffi, Chapter-0}
+\author{pika}
+
+\maketitle
+\include{macros}
+
+\begin{example*}
+\citet[Eg-3.4]{aluffi} Define $\catC$ as follows: Let $S$ be any
+set, and define a category $\catC\coloneqq\hat{\mathsf{S}}$ by setting
+\end{example*}
+\begin{itemize}
+\item $\Obj(\hat{\mathsf{S}})=\powerset(S)$
+\item for any pair of objects $A,B\in\Obj(\hat{\mathsf{S}})$ let $\Hom_{\catC}(A,B)$
+be the pair $(A,B)$ if $A\subseteq B,$ and let $\Hom_{\catC}(A,B)=\emptyset$
+otherwise. 
+\end{itemize}
+Indeed, notice that since every $A\in\Obj(\hat{\mathsf{S}})$ satisfies
+$A\subseteq A,$ every $\Hom_{\catC}(A,A)$ is nonempty with the identity
+morphism $1_{A}$ being the pair $(A,A)$. 
+
+Next, if there is morphism $A\morphism B$ and a morphism $B\to C$
+then this means 
+
+that there is a morhpism $A\to C$ which is just the pair $(A,C)$.
+Indeed, since $A\subseteq B$ and $B\subseteq C$ implies that $A\subseteq C$,
+so $\Hom_{\catC}(A,C)$ is nonempty. 
+
+Next, if there are morphisms $f:A\morphism B$, $g:B\morphism C$
+and $h:C\morphism D$ for objects $A,B,C,D\in\Obj(\hat{\mathsf{S}})$
+then the morphism $hg=(B,D)$, $f=(A,B),$ $gf=(A,C)$ and so $(hg)f=(A,D)=h(gf)$.
+So, associativity also holds. 
+
+That $A\overset{f}{\longrightarrow}B$ satisfies $f1_{A}=f$ and $1_{B}f=f$
+is obvious because $1_{A}=(A,A)$ and $f=(A,B)$ so the morphism $f1_{A}$
+is just $(A,B)$ while the morphism $1_{B}f$ is also just $(A,B)$. 
+\begin{example*}
+\citet[Eg-3.3]{aluffi} Fix a set $S$ and a relation $\sim$ that
+is reflexive and transitive. Then define a category $\catC$ as such.
+\end{example*}
+\begin{itemize}
+\item the objects of $\catC$ are elements of $S$. 
+\item if $a,b\in\Obj(\catC)$ then $\Hom_{\catC}(a,b)$ is a set containing
+the element $(a,b)$ if $a\sim b$ and $\Hom_{\catC}(a,b)=\emptyset$
+otherwise. 
+\end{itemize}
+By reflexivity, $\Hom(a,a)$ is always nonempty because it contains
+the element $1_{a}=(a,a)$ always. 
+
+If $f:a\to b$ and $g:b\to c$ are any two morphisms then this means
+that $a\sim b$ and $b\sim c$. By transitivity, $a\sim c$ and so
+$gf:A\to C$ is a well defined morphism. In fact it is the element
+$(a,c).$ That is, $\Hom(a,c)=\{gf\}=\{(a,c)\}$. 
+
+If $f:a\to b,g:b\to c$ and $h:c\to d$ are morphisms in $\catC$
+then 
+
+$hg=(b,d)$ and $gf=(a,c)$ so $(hg)f=(a,d)=h(gf)$. 
+
+Next, for any morphism $f:a\to b$, $1_{b}f=(a,b)=f$ and $f1_{a}=(a,b)=f$. 
+
+An interesting fact about this category is that given any morphism
+$f:a\to b$, take any object $c$ and a pair of morphisms $\alpha',\alpha'':c\to a$.
+If $c,\alpha',\alpha''$ are so that
+\[
+f\alpha'=f\alpha''
+\]
+ then this implies that $\alpha'=\alpha''$. In fact $\alpha'=\alpha''$
+is always true because $\Hom_{\catC}(c,a)$ is always a singleton
+or empty. This discussion elucidates the fact that every morphism
+in this category is a \emph{monomorphism}. 
+
+In fact, take any morphism $f:a\to b$ and fix any object $c\in\Obj(\catC)$.
+Take any pair of morphisms $\beta',\beta'':b\to c$ so that $\beta'f=\beta''f$.
+Then, $\beta'=\beta''$. 
+
+Once again, $\beta'=\beta''$ always holds for the same reason as
+above. Also, $\beta'f=\beta''f$ also always holds because $\beta'f=(b,c)$
+and so is $\beta''f$. Every morphism in this category is an \emph{epimorphism.}
+\begin{example*}
+\citet[Eg-3.5]{aluffi} Let $\catC$ be a category and fix $A\in\Obj(\catC)$.
+We will define another category from $\catC$, denoted $\catC_{A}$
+as 
+\end{example*}
+\begin{itemize}
+\item objects of $\catC_{A}$ are morphisms from objects of $\catC$ to
+$A$. That is, elements of $\Obj(\catC_{A})$ are of the form $Z\overset{f}{\longrightarrow}A$
+for any object $Z\in\Obj(\catC)$. 
+\item morphisms between two objects $f,g\in\Obj(\catC_{A})$ are diagrams
+comprising of objects of $\catC$ and the appropriate morphisms between
+them. 
+\end{itemize}
+Given two objects $f\colon Z_{1}\to A$ and $g\colon Z_{2}\to A$
+in $\catC_{A}$ a morphism between $f,g$ in $\catC_{A}$ is a \emph{commutative
+diagram }of the form 
+
+% https://q.uiver.app/#q=WzAsMyxbMSwyLCJDIl0sWzAsMCwiWl8xIl0sWzIsMCwiWl8yIl0sWzIsMCwiZyJdLFsxLDAsImYiLDJdLFsxLDIsIlxcc2lnbWEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\[\begin{tikzcd}
+	{Z_1} && {Z_2} \\
+	\\
+	& A
+	\arrow["\sigma", dashed, from=1-1, to=1-3]
+	\arrow["f"', from=1-1, to=3-2]
+	\arrow["g", from=1-3, to=3-2]
+\end{tikzcd}\]
+
+We will show that this construction of $\catC_{A}$ forms a category. 
+
+First, we will show that $\End_{\catC_{A}}(f)$ for any $f\in\Obj(\catC_{A})$
+is nonempty and contains the identity morphism by noticing that the
+diagram 
+
+% https://q.uiver.app/#q=WzAsMyxbMSwyLCJDIl0sWzAsMCwiWiJdLFsyLDAsIloiXSxbMiwwLCJmIl0sWzEsMCwiZiIsMl0sWzEsMiwiMV9aIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\[\begin{tikzcd}
+	Z && Z \\
+	\\
+	& A
+	\arrow["{1_Z}", dashed, from=1-1, to=1-3]
+	\arrow["f"', from=1-1, to=3-2]
+	\arrow["f", from=1-3, to=3-2]
+\end{tikzcd}\]
+
+where $1_{Z}$ is the identity morphism for the object $Z\in\Obj(\catC)$.
+This diagram is the element $1_{f}\in\Hom_{\catC_{A}}(f,f)$. 
+
+Take any two morphisms $f_{1}\to f_{2}$ and $f_{2}\to f_{3}$ in
+$\catC_{A}$ next.
+
+We will show that this defines a new morphism which is the composition
+of these two morphisms. For this we concatenate the commutative diagrams
+$f_{1}\to f_{2}$ and $f_{2}\to f_{3}$ side by side. 
+
+% https://q.uiver.app/#q=WzAsNCxbMiwyLCJBIl0sWzAsMCwiWl8xIl0sWzIsMCwiWl8yIl0sWzQsMCwiWl8zIl0sWzEsMCwiZl8xICIsMl0sWzIsMCwiZl8yIl0sWzEsMiwiXFxzaWdtYSJdLFszLDAsImZfMyJdLFsyLDMsIlxcdGF1Il1d
+\[\begin{tikzcd}
+	{Z_1} && {Z_2} && {Z_3} \\
+	\\
+	&& A
+	\arrow["\sigma", from=1-1, to=1-3]
+	\arrow["{f_1 }"', from=1-1, to=3-3]
+	\arrow["\tau", from=1-3, to=1-5]
+	\arrow["{f_2}", from=1-3, to=3-3]
+	\arrow["{f_3}", from=1-5, to=3-3]
+\end{tikzcd}\]
+
+We will show that the following diagram contained in this diagram
+also commutes. 
+
+% https://q.uiver.app/#q=WzAsMyxbMiwyLCJBIl0sWzAsMCwiWl8xIl0sWzQsMCwiWl8zIl0sWzIsMCwiZl8zIl0sWzEsMCwiZl8xICIsMl0sWzEsMiwiXFxzaWdtYSBcXHRhdSJdXQ==
+\[\begin{tikzcd}
+	{Z_1} &&&& {Z_3} \\
+	\\
+	&& A
+	\arrow["{\tau\sigma}", from=1-1, to=1-5]
+	\arrow["{f_1 }"', from=1-1, to=3-3]
+	\arrow["{f_3}", from=1-5, to=3-3]
+\end{tikzcd}\]
+
+Indeed, since $f_{1}=f_{2}\sigma$ and $f_{2}=f_{3}\tau$ from the
+previous diagram due to commutativity so $f_{1}=f_{3}\tau\sigma=f_{3}(\tau\sigma)$
+which proves that this diagram also commutes, therefore, the composition
+of the morphisms $f_{1}\to f_{2}$ and $f_{2}\to f_{3}$ is also a
+commutative diagram which describes the morphism $f_{1}\to f_{3}$
+between objects $f_{1}$ and $f_{3}$ of the category $\catC_{A}.$
+
+Next, suppose there are three morphisms $f_{1}\to f_{2}\to f_{3}\to f_{4}$
+of objects $f_{1},f_{2},f_{3}$ and $f_{4}$ in $\Obj(\catC_{A})$.
+That means there are three diagrams as below % https://q.uiver.app/#q=WzAsNSxbMiwyLCJBIl0sWzIsMCwiWl8yIl0sWzAsMCwiWl8xIl0sWzQsMCwiWl8zIl0sWzQsMiwiWl80Il0sWzEsMCwiZl8yICIsMl0sWzIsMCwiZl8xICIsMl0sWzQsMCwiZl80Il0sWzIsMSwiXFxhbHBoYSJdLFszLDAsImZfMyJdLFsxLDMsIlxcYmV0YSJdLFszLDQsIlxcZ2FtbWEiXV0=
+\[\begin{tikzcd}
+	{Z_1} && {Z_2} && {Z_3} \\
+	\\
+	&& A && {Z_4}
+	\arrow["\alpha", from=1-1, to=1-3]
+	\arrow["{f_1 }"', from=1-1, to=3-3]
+	\arrow["\beta", from=1-3, to=1-5]
+	\arrow["{f_2 }"', from=1-3, to=3-3]
+	\arrow["{f_3}", from=1-5, to=3-3]
+	\arrow["\gamma", from=1-5, to=3-5]
+	\arrow["{f_4}", from=3-5, to=3-3]
+\end{tikzcd}\] 
+
+Since $f_{1}\to f_{2}$ is a morphism of objects $f_{1}$ and $f_{2}$
+in $\catC_{A}$, the associated diagram above for the two morphisms
+is commutative. The commutativity relation is $f_{1}=f_{2}\alpha$.
+Similarly, we argue for the other three diagrams and find the following
+equalities by commutativity: 
+
+\begin{align*}
+f_{2} & =f_{3}\beta\text{ and}\\
+f_{3} & =f_{4}\gamma
+\end{align*}
+
+Let us set $\sigma\coloneqq f_{1}\to f_{2},\tau\coloneqq f_{2}\to f_{3},\delta\coloneqq f_{3}\to f_{4}$
+as our diagrams. Then, 
+
+the diagram $\delta\tau$ is as
+
+% https://q.uiver.app/#q=WzAsMyxbMCwyLCJBIl0sWzAsMCwiWl8yIl0sWzIsMiwiWl80Il0sWzEsMCwiZl8yICIsMl0sWzIsMCwiZl80Il0sWzEsMiwiXFxnYW1tYSBcXGJldGEgIl1d
+\[\begin{tikzcd}
+	{Z_2} && \\
+	\\
+	A && {Z_4}
+	\arrow["{f_2 }"', from=1-1, to=3-1]
+	\arrow["{\gamma \beta }", from=1-1, to=3-3]
+	\arrow["{f_4}", from=3-3, to=3-1]
+\end{tikzcd}\]
+
+and the diagram $(\delta\tau)\sigma$ is
+
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJaXzEiXSxbMCwyLCJBIl0sWzIsMiwiWl80Il0sWzAsMiwiZl80IFxcZ2FtbWEgXFxiZXRhIFxcYWxwaGEgIl0sWzIsMSwiZl80ICJdLFswLDEsImZfMSIsMl1d
+\[\begin{tikzcd}
+	{Z_1} && \\
+	\\
+	A && {Z_4}
+	\arrow["{f_1}"', from=1-1, to=3-1]
+	\arrow["{\gamma \beta \alpha }", from=1-1, to=3-3]
+	\arrow["{f_4 }", from=3-3, to=3-1]
+\end{tikzcd}\]
+
+Next, the diagram $\tau\sigma$ is 
+
+\[\begin{tikzcd}
+	{Z_1} && {Z_3}\\
+	\\
+	A \\
+	\arrow["{f_1}"', from=1-1, to=3-1]
+	\arrow["{\beta \alpha}", from=1-1, to=1-3]
+	\arrow["{f_3 }", from=1-3, to=3-1]
+\end{tikzcd}\]
+
+and finally the diagram for $\delta(\tau\sigma)$ is 
+
+\[\begin{tikzcd}
+	{Z_1} && \\
+	\\
+	A && {Z_4}
+	\arrow["{f_1}"', from=1-1, to=3-1]
+	\arrow["{\gamma \beta \alpha }", from=1-1, to=3-3]
+	\arrow["{f_4 }", from=3-3, to=3-1]
+\end{tikzcd}\]
+
+So, $\delta(\tau\sigma)=(\delta\tau)\sigma$ proves associativity. 
+
+That given any morphism $\alpha:f_{1}\to f_{2}$ of $\catC_{A}$,
+$1_{f_{2}}\alpha=\alpha$ and $\alpha1_{f_{1}}=\alpha$ is obvious
+from the same kinds of steps taken above. 
+\begin{example*}
+\citet[Eg-3.6]{aluffi}
+\end{example*}
+For the category $\catC$ associated to the set of integers with the
+$\leq$ being $\sim$ as in Eg-3.3. 
+
+fix an object $A=3$. Then, any object of $\catC_{A}$ is a pair $(x,3)\in\bZ\times\bZ$
+with $x\leq3$. There is a morphism 
+
+$(m,3)\to(n,3)$ if and only if $m\leq n$. 
+
+We learned about the slice category, now let us see an example of
+a category that is dual to this - the coslice category.
+\begin{example}
+\citet[Eg-3.8]{aluffi} For a concrete example, take the category
+$\mathsf{Set}$ for which $\Obj(\mathsf{Set)}$ is the class of all
+sets. Fix a singleton $\{*\}$ in $\mathsf{Set}$. Next, we define
+a new category $\mathsf{Set}^{*}$ whose objects are all the morphisms
+$f:\{*\}\to A$ for any object $A$ of $\mathsf{Set}.$ Any object
+in $\mathsf{Set}$ may be identified as a pair $(S,s)$ where $s=f(*)$
+because the information of any object in $\mathsf{Set}^{*}$ comprises
+of the choice of the nonempty set $S$ and of an element $s\in S$
+that $f$ maps $*$ to in $S$. 
+
+A morphism between two objects $(S,s)$ and $(T,t)$ in $\mathsf{Set}^{*}$
+corresponds to a map $\sigma:S\to T$ \emph{such that }$\sigma(s)=t$. 
+
+Objects in $\mathsf{Set}^{*}$ are called \emph{pointed sets}. 
+\end{example}
+
+\begin{xca*}
+\citet[Ex-3.1]{aluffi} Let $\catC$ be a category. Consider a structure
+$\catC^{\mathsf{op}}$ with 
+\end{xca*}
+\begin{itemize}
+\item $\Obj(\catC^{\mathsf{op}})\coloneqq\Obj(\catC)$;
+\item for a pair of objects $A,B\in\Obj(\catC^{\mathsf{op}})$, $\Hom_{\catC^{\mathsf{op}}}(A,B)\coloneqq\Hom_{\catC}(B,A)$ 
+\end{itemize}
+that is, given any pair of objects $A,B$ of the category $\catC^{\mathsf{op}}$,
+arrows from $A$ to $B$ are arrows from $B$ to $A$ in $\catC$. 
+\begin{sol*}
+Take any pair of objects $A,B\in\Obj(\catC^{\mathsf{op}})$. Define
+\[
+\ocircle_{\catC^{\mathsf{op}}}\colon\Hom_{\catC^{\mathsf{op}}}(A,B)\times\Hom_{\catC^{\mathsf{op}}}(B,C)\to\Hom_{\catC^{\mathsf{op}}}(A,C)
+\]
+
+by the following rule: 
+
+\[
+g\ocircle_{\catC^{\mathsf{op}}}f\coloneqq f\ocircle g
+\]
+ where the $\ocircle$ in the right hand side is the composition of
+$f$ and $g$ in $\catC$. 
+\end{sol*}
+Since $\Hom_{\catC}(A,A)$ is nonempty for every $A\in\Obj(\catC)$
+and objects of $\catC^{\mathsf{op}}$ are simply objects in $\catC$,
+$\Hom_{\catC^{\mathsf{op}}}(A,A)$ is also nonempty and contains the
+same $1_{A}\in\Hom_{\catC}(A,A)$. 
+
+The morphism $f\ocircle_{\catC^{\mathsf{op}}}g$ is an element of
+$\Hom_{\catC^{\mathsf{op}}}(A,C)$ because $f\circ g$ is an element
+of $\Hom_{\catC}(C,A)$. The well definedness of the map $\ocircle_{\catC^{\mathsf{op}}}$follows
+immediately from the well definedness of $\ocircle$. Just take elements
+$f,f'\in\Hom_{\catC}(B,A)$ and $g,g'\in\Hom_{\catC}(C,B)$ with $f=f'$,
+$g=g'$ and then notice that 
+\begin{align*}
+g\ocircle_{\catC^{\mathsf{op}}}f= & f\ocircle g\\
+= & f'\ocircle g'\\
+= & g'\ocircle_{\catC^{\mathsf{op}}}f'
+\end{align*}
+
+Next, take the morphisms $f:A\to B,g:B\to C,h:C\to D$ in $\catC^{\mathsf{op}}$. 
+
+Then, 
+\begin{align*}
+(h\ocircle_{\catC^{\mathsf{op}}}g)\ocircle_{\catC^{\mathsf{op}}}f & =f\ocircle(g\ocircle h)\\
+ & =(f\ocircle g)\ocircle h\\
+ & =h\ocircle_{\catC^{\mathsf{op}}}\big(g\ocircle_{\catC^{\mathsf{op}}}f\bigr)
+\end{align*}
+
+showing that the composition is associative. 
+
+Finally, pick a morphism $f\in\Hom_{\catC^{\mathsf{op}}}(A,B)$. Then,
+\begin{align*}
+1_{B}\ocircle_{\catC^{\mathsf{op}}}f= & f\ocircle1_{B}\\
+= & fp
+\end{align*}
+
+and 
+\begin{align*}
+f\ocircle_{\catC^{\mathsf{op}}}1_{A}= & 1_{A}\ocircle f\\
+= & f
+\end{align*}
+
+This completes our construction and proof of construction of the opposite
+category.
+\begin{rem*}
+We choose to indicate the morphism $f\in\Hom_{\catC^{\mathsf{op}}}(A,B)$
+by just the same symbol when we consider it in $\Hom_{\catC}(B,A)$.
+This might not be a bit tricky to deal with initially but it does
+make writing the proof quite more convenient.
+\end{rem*}
+\begin{xca*}
+\citet[Ex-3.2]{aluffi} If $A$ is a finite set, how large is $\End_{\mathsf{Set}}(A)$?
+\end{xca*}
+\begin{sol*}
+The morphisms in $\mathsf{Set}$ are simply functions between the
+objects (sets) of $\mathsf{Set}$. So we are simply counting the number
+of functions from a finite set to itself. 
+
+I claim that for a finite set $A$ of $n$ elements, there are $n^{n}$
+functions $A\to A$. Since bijections compose to give bijections,
+it suffices to prove the statement for a set of the form $\{1,\dots,n\}$. 
+
+We notice that there is a bijection $\{1,\dots,n\}^{\{1,\dots,n\}}\to\prod^{n}_{k=1}\{1,\dots,n\}$.
+Indeed, the map 
+\[
+f\mapsto(f(i))^{n}_{i=1}
+\]
+
+is the obvious candidate. By the product rule of combinatorics, we
+see that $\prod^{n}_{k=1}\{1,\dots,n\}$ has cardinality $n^{n}$
+and we are done. 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-3.3]{aluffi} Formulate precisely what it means to say that
+$1_{a}$ is an identity with respect to composition in Eg-3.3. 
+\end{xca*}
+\begin{sol*}
+Take any pair of objects $a,b\in\Obj(\catC)$.If $\Hom_{\catC}(a,b)$
+is empty, then the statement is trivially true. If not then pick $(a,b)\in\Hom_{\catC}(a,b)$.
+It is clear that we have 
+\[
+(a,b)1_{a}=(a,b)(a,a)=(a,b)
+\]
+
+which means that $1_{a}$ is the identity with respect to composition.
+We can do similar for $1_{b}.$ 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-3.4]{aluffi} Can we define a category in the style of Eg-3.3
+using the relation $<$ on $\bZ.$
+\end{xca*}
+\begin{sol*}
+Every $\Hom_{\catC}(a,a)$ needs to be nonemtpy. If we try to define
+a category using < we miss out on $a\sim a$ which does not give us
+any obvious candidate of $1_{a}\in\Hom_{\catC}(a,a)$. Shortly put,
+$<$ is not reflexive. 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-3.5]{aluffi} Define in what sense the category constructed
+in Eg-3.4 coincides with that in Eg-3.3.
+\end{xca*}
+\begin{sol*}
+Given a set $S$, define the relation $\sim$ on $\powerset(S)$ as
+such: any two subsets $A,B$ of $S$ are related by $\sim$, as in
+$A\sim B$ if and only if $A\subseteq B$. The rest is obvious. 
+
+Simply put, the $\subseteq$ relation is a preorder. That is, $A\subseteq A$
+for every susbet $A$ of $S$ and $A\subseteq B,B\subseteq C$ means
+$A\subseteq C$ for any subsets $A,B,C$ of $S$. 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-3.8]{aluffi} A \emph{subcategory} $\catC'$ of a category
+$\catC$ consists of a collection of objects of $\catC$, with morphisms
+$\Hom_{\catC'}(A,B)\subseteq\Hom_{\catC}(A,B)$ for all objects $A,B\in\Obj(\catC')$,
+such that identities and compositions in $\catC$ make $\catC'$ into
+a category. A subcategory $\catC'$ is full if $\Hom_{\catC'}(A,B)=\Hom_{\catC}(A,B)$
+for all $A,B\in\Obj(\catC')$. Construct a category of \emph{infinite
+sets }and explain how it may be viewed as a full subcategory of $\mathsf{Set}.$
+\end{xca*}
+\begin{sol*}
+We define a category $\mathsf{InfSet}$ as such:
+\end{sol*}
+\begin{itemize}
+\item the objects of $\mathsf{InfSet}$ are simply the infinite sets ni
+$\Obj(\mathsf{Set)}$, that is $\Obj(\mathsf{InfSet)}\subseteq\Obj(\mathsf{Set})$
+\item given any two infinite sets $A,B\in\Obj(\mathsf{InfSet)}$ we define
+the set of morphisms $A\to B$ by $\Hom_{\mathsf{InfSet}}(A,B)\coloneqq\Hom_{\mathsf{Set}}(A,B)$. 
+\end{itemize}
+That these constructions make $\mathsf{InfSet}$ into a subcategory
+of $\mathsf{Set}$ is obvious. It has the same identity and compositions
+as $\mathsf{Set}.$ 
+
+That it is a full subcategory of $\mathsf{Set}$ is by definition. 
+\begin{xca*}
+\citet[Ex-3.6]{aluffi} Define a category $\mathsf{V}$ by taking
+$\Obj(\mathsf{V})\coloneqq\bN$ and letting $\Hom_{\mathsf{v}}(n,m)\coloneqq\text{the set of }m\times n\text{ matrices with real entries, for all }n,m\in\bN.$
+Use product of matrices to define composition. Does this category
+\emph{feel }familiar? 
+\end{xca*}
+\begin{sol*}
+Given objects $j,k,l\in\Obj(\mathsf{V)},$ define morphisms $M_{k\times j}\in\Hom_{\mathsf{V}}(j,k),N_{l\times k}\in\Hom_{\mathsf{V}}(k,l)$
+where $M_{k\times j}$ and $N_{l\times k}$ are $k\times j$ and $l\times k$
+shaped matrices of reals respectively. Define composition
+
+$\Hom(j,k)\times\Hom(k,l)\to\Hom(j,l)$
+
+by the rule 
+
+$M_{k\times j}\circ N_{l\times k}\coloneqq N_{l\times k}M_{k\times j}$ 
+
+where the product on the right hand side is matrix multiplication
+which is well defined for $l\times k$ and $k\times j$ matrices.
+The result is a matrix $l\times j$ which is an element of $\Hom_{\mathsf{V}}(j,l)$. 
+
+Given any morphism $M_{n\times m}$, consider the morphism $1_{n}\in\Hom(n,n)$.
+Notice that $1_{n}M_{n\times m}=M$ and $M_{n\times m}1_{m}=M$ which
+shows that $V$ is a category. 
+
+This is very familiar to the category $\mathsf{Vect}$ of all finite
+dimensional $k-$vector spaces. The objects are finite dimensional
+spaces and the morphisms are linear maps. The spaces can be identified
+by their dimension which is a natural number and the linear maps can
+be identified by matrices. This suggests there is a sense of \emph{isomorphism
+}or \emph{sameness} between these two categories. Such ideas have
+not been covered yet in the book so we will not dig further into them
+for now. 
+
+The matrix of 0 rows and 0 columns can represent a linear operator
+on the trivial vector space $\{0\}$ which has dimension 0. 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-3.7]{aluffi} Define carefully objects and morphisms in
+Eg-3.7, and draw the diagram corresponding to composition.
+\end{xca*}
+\begin{sol*}
+Suppose $\catC$ is given as a category. Then, fix some object $S\in\Obj(\catC)$.
+Define the new category $\catC^{S}$ as follows: 
+\end{sol*}
+\begin{itemize}
+\item objects in $\catC^{S}$ are morphisms $S\to A$ for objects $A\in\Obj(\catC)$, 
+\item morphisms between objects $f_{1,}f_{2}$ in $\catC^{s}$ are diagrams
+as follows: 
+\end{itemize}
+\[\begin{tikzcd}
+	& S \\ 
+	\\
+	{Z_1} && {Z_2} \\
+	\arrow["\sigma", dashed, from=3-3, to=3-1]
+	\arrow["f_{1}"', from=1-2, to=3-1]
+	\arrow["f_{2}", from=1-2, to=3-3]
+\end{tikzcd}\]
+
+with $f_{1}=\sigma f_{2}$; that is to say that the diagrams are commutative. 
+
+Here, $Z_{1},Z_{2}\in\Obj(\catC)$. 
+
+Given any object $f:S\to Z\in\Hom_{\catC}(S,Z)$ of $\catC^{S}$ where
+$Z\in\Obj(\catC)$ there is a diagram 
+
+\[\begin{tikzcd}
+	& S \\ 
+	\\
+	{Z} && {Z} \\
+	\arrow["{1_f}", dashed, from=3-1, to=3-3]
+	\arrow["{f}"', from=1-2, to=3-1]
+	\arrow["{f}", from=1-2, to=3-3]
+\end{tikzcd}\]
+
+which obviously commutes and therefore, if we denote this diagram
+by $1_{f}$ then $1_{f}\in\Hom_{\catC^{S}}(f,f)$ for every $f\in\Obj(\catC^{S})$. 
+
+Given two morphisms $f_{1}\to f_{2}\to f_{3}$ in $\catC^{S}$, we
+will define their composition by the following commutative diagram: 
+
+\[\begin{tikzcd}
+	{Z_1} && {Z_2} && {Z_3} \\
+	\\
+	&& A && \\
+	\arrow["{f_1}", from=3-3, to=1-1]
+	\arrow["{f_2}", from=3-3, to=1-3]
+	\arrow["{f_3}"', from=3-3, to=1-5]
+	\arrow["{\alpha}", to=1-1, from=1-3]
+	\arrow["{\beta}", to=1-3, from=1-5]
+\end{tikzcd}\]
+
+This diagram indeed commutes because $f_{1}=\alpha f_{2},f_{2}=\beta f_{3}$
+so $f_{1}=\alpha\beta f_{3}$
+
+which gives the commutative diagram 
+
+\[\begin{tikzcd}
+	{Z_1} & &  {Z_3} \\
+	\\
+	& A & \\
+	\arrow["{f_1}", from=3-2, to=1-1]
+	\arrow["{f_3}"', from=3-2, to=1-3]
+	\arrow["{\alpha\beta}", from=1-3, to=1-1]
+\end{tikzcd}\]
+
+which describes a morphism $f_{1}\to f_{3}$ proving that compositions
+exist and are well defined. 
+
+That $1_{f}$ is the identity with respect to composition can be proved
+from this easily. We shall only prove the associativity of compositions
+next. 
+
+For this, take three morphisms $f_{1}\to f_{2}\to f_{3}\to f_{4}$
+of objects $f_{1},f_{2},f_{3},f_{4}$ in $\catC^{S}.$ 
+
+Consider the diagram 
+
+\[\begin{tikzcd}
+	{Z_1} && {Z_2} && {Z_3} \\
+	\\
+	&& A && {Z_4}
+	\arrow["{f_1}", to=1-1, from=3-3]
+	\arrow["{f_2}", to=1-3, from=3-3]
+	\arrow["{f_3}", to=1-5, from=3-3]
+	\arrow["{f_4}", to=3-5, from=3-3]
+	\arrow["{\alpha}"', from=1-3, to=1-1]
+	\arrow["{\beta}"', from=1-5, to=1-3]
+	\arrow["{\gamma}", from=3-5, to=1-5]
+\end{tikzcd}\]
+
+Next, we will label the morphisms $\sigma:f_{3}\to f_{4},\tau:f_{2}\to f_{3},\lambda:f_{1}\to f_{2}$
+and look first at $(\sigma\tau)\lambda$. It is clear that the composition
+$\sigma\tau$ has the diagram without $Z_{3}$ and $f_{3}$ in the
+middle with an arrow $Z_{4}\to Z_{2}$ that is the morphism $\beta\gamma$.
+This, composed with $f_{1}$ gives us a diagram with no $Z_{2}$ and
+$f_{2}$ in the middle with a map $Z_{4}\to Z_{1}$ given with the
+arrow $\alpha\beta\gamma.$ 
+
+Next, we look at $\sigma(\tau\lambda)$. Clearly, $\tau\lambda$ gives
+us the diagram without $Z_{2}$ and $f_{2}$ in the middle with a
+morphism from $Z_{3}\to Z_{1}$ given as $\alpha\beta$. Composing
+this new diagram with the diagram $\sigma$ erases the $f_{3}$ and
+$Z_{3}$ in the middle giving an arrow $Z_{4}\to Z_{1}$ which is
+the morphism $\alpha\beta\gamma$. This completes the proof. 
+\begin{thebibliography}{Paolo Aluffi (2009)}
+\bibitem[Paolo Aluffi(2009)]{aluffi}
+
+\end{thebibliography}
+
+\end{document}

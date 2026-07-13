@@ -1,0 +1,3832 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage[default]{comicneue}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=black,  %choose some color if you want links to stand out
+}
+
+% \usepackage{url}
+
+%\usepackage[style=alphabetic]{biblatex}
+%\addbibresource{bibliography.bib}
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{csquotes}
+% \usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+% \usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{amsmath, mathtools, amssymb}
+% \usepackage{amsfonts} 
+\usepackage{newpxtext} 
+\usepackage[euler-digits]{eulervm}
+%\usepackage{libertine,libertinust1math}
+
+%\usepackage[sc,osf]{mathpazo}   % With old-style figures and real smallcaps.
+%\linespread{1.025}              % Palatino leads a little more leading
+
+% Euler for math and numbers
+%\usepackage[euler-digits,small]{eulervm}
+\usepackage{extarrows}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{systeme}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+
+
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+\let\epsilon\varepsilon
+\newcommand\contra{\scalebox{1.1}{$\lightning$}}
+\let\emptyset\varnothing
+
+
+\definecolor{correct}{HTML}{009900}
+\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand\green[1]{{\color{correct}{#1}}}
+
+
+\newcommand\hr{
+	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+
+
+% hide parts
+\newcommand\hide[1]{}
+
+
+
+% si unitx
+\usepackage{siunitx}
+\sisetup{locale = FR}
+% \renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\mat[1]{\mathbf{#1}}
+
+
+% tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+
+
+\tikzset{
+	force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
+}
+
+% theorems
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+
+% \theoremstyle{plain}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+		}
+]{thmgreenbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+		}
+]{thmbluebox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RoyalPurple}, bodyfont=\normalfont\itshape,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=Rhodamine, backgroundcolor=Rhodamine!5,
+		}
+]{thmpinkbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue
+		}
+]{thmblueline}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont\itshape,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!5,
+		}
+]{thmredbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!1,
+		},
+	qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+		},
+]{thmexplanationbox}
+
+\declaretheorem[style=thmgreenbox, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmbluebox, name=Example, numberwithin=section]{eg}
+\declaretheorem[style=thmpinkbox, name=Exercise, numberwithin=section]{ex}
+\declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{prop}
+\declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
+\declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
+\declaretheorem[style=thmredbox, numbered=no, name=Corollary, numberwithin=section]{corollary}
+
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+
+\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+
+\declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+
+\newtheorem*{uovt}{UOVT}
+\newtheorem*{notation}{Notation}
+\newtheorem*{previouslyseen}{As previously seen}
+\newtheorem*{problem}{Problem}
+\newtheorem*{observe}{Observe}
+\newtheorem*{property}{Property}
+\newtheorem*{intuition}{Intuition}
+
+
+\usepackage{etoolbox}
+\AtEndEnvironment{vb}{\null\hfill$\diamond$}%
+\AtEndEnvironment{intermezzo}{\null\hfill$\diamond$}%
+% \AtEndEnvironment{opmerking}{\null\hfill$\diamond$}%
+
+% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+\makeatletter
+% \def\thm@space@setup{%
+%   \thm@preskip=\parskip \thm@postskip=0pt
+% }
+
+\newcommand{\oefening}[1]{%
+	\def\@oefening{#1}%
+	\subsection*{Oefening #1}
+}
+
+\newcommand{\suboefening}[1]{%
+	\subsubsection*{Oefening \@oefening.#1}
+}
+
+\newcommand{\exercise}[1]{%
+	\def\@exercise{#1}%
+	\subsection*{Exercise #1}
+}
+
+\newcommand{\subexercise}[1]{%
+	\subsubsection*{Exercise \@exercise.#1}
+}
+
+
+\usepackage{xifthen}
+
+\def\testdateparts#1{\dateparts#1\relax}
+\def\dateparts#1 #2 #3 #4 #5\relax{
+	\marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
+}
+
+\def\@lesson{}%
+\newcommand{\lesson}[3]{
+	\ifthenelse{\isempty{#3}}{%
+		\def\@lesson{Lecture #1}%
+	}{%
+		\def\@lesson{Lecture #1: #3}%
+	}%
+	\subsection*{\@lesson}
+	\testdateparts{#2}
+}
+
+% \renewcommand\date[1]{\marginpar{#1}}
+
+
+% fancy headers
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% \fancyhead[LE,RO]{Gilles Castel}
+% \fancyhead[RO,LE]{\@lesson}
+% \fancyhead[RE,LO]{}
+% \fancyfoot[LE,RO]{\thepage}
+% \fancyfoot[C]{\leftmark}
+% \fancyhf{}
+\fancyhf[roh,leh]{\thepage}
+\fancyhf[reh]{\nouppercase{\leftmark}}
+\fancyhf[loh]{\nouppercase{\rightmark}}
+\cfoot{}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\makeatother
+
+
+
+
+% notes
+% \usepackage{todonotes}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{breakable}
+\newenvironment{verbetering}{\begin{tcolorbox}[
+			arc=0mm,
+			colback=white,
+			colframe=green!60!black,
+			title=Opmerking,
+			fonttitle=\sffamily,
+			breakable
+		]}{\end{tcolorbox}}
+
+\newenvironment{noot}[1]{\begin{tcolorbox}[
+			arc=0mm,
+			colback=white,
+			colframe=white!60!black,
+			title=#1,
+			fonttitle=\sffamily,
+			breakable
+		]}{\end{tcolorbox}}
+
+
+\newcommand{\outermeasure}{{{\mu^{\star}}}}
+
+%\def\mbb#1{\mathbb{#1}}
+%\def\mfk#1{\mathfrak{#1}}
+
+\newcommand{\inv}{^{\raisebox{.2ex}{$\scriptscriptstyle-1$}}}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+tcolorbox
+graphicboxes
+\end_modules
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 14
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.5cm
+\rightmargin 3cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Aluffi,
+ Chapter-0
+\end_layout
+
+\begin_layout Author
+pika
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "macros.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Eg-3.4"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Define 
+\begin_inset Formula $\catC$
+\end_inset
+
+ as follows:
+ Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be any set,
+ and define a category 
+\begin_inset Formula $\catC\coloneqq\hat{\mathsf{S}}$
+\end_inset
+
+ by setting
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Obj(\hat{\mathsf{S}})=\powerset(S)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+for any pair of objects 
+\begin_inset Formula $A,B\in\Obj(\hat{\mathsf{S}})$
+\end_inset
+
+ let 
+\begin_inset Formula $\Hom_{\catC}(A,B)$
+\end_inset
+
+ be the pair 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+ if 
+\begin_inset Formula $A\subseteq B,$
+\end_inset
+
+ and let 
+\begin_inset Formula $\Hom_{\catC}(A,B)=\emptyset$
+\end_inset
+
+ otherwise.
+ 
+\end_layout
+
+\begin_layout Standard
+Indeed,
+ notice that since every 
+\begin_inset Formula $A\in\Obj(\hat{\mathsf{S}})$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $A\subseteq A,$
+\end_inset
+
+ every 
+\begin_inset Formula $\Hom_{\catC}(A,A)$
+\end_inset
+
+ is nonempty with the identity morphism 
+\begin_inset Formula $1_{A}$
+\end_inset
+
+ being the pair 
+\begin_inset Formula $(A,A)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Next,
+ if there is morphism 
+\begin_inset Formula $A\morphism B$
+\end_inset
+
+ and a morphism 
+\begin_inset Formula $B\to C$
+\end_inset
+
+ then this means 
+\end_layout
+
+\begin_layout Standard
+that there is a morhpism 
+\begin_inset Formula $A\to C$
+\end_inset
+
+ which is just the pair 
+\begin_inset Formula $(A,C)$
+\end_inset
+
+.
+ Indeed,
+ since 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+ and 
+\begin_inset Formula $B\subseteq C$
+\end_inset
+
+ implies that 
+\begin_inset Formula $A\subseteq C$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\Hom_{\catC}(A,C)$
+\end_inset
+
+ is nonempty.
+ 
+\end_layout
+
+\begin_layout Standard
+Next,
+ if there are morphisms 
+\begin_inset Formula $f:A\morphism B$
+\end_inset
+
+,
+ 
+\begin_inset Formula $g:B\morphism C$
+\end_inset
+
+ and 
+\begin_inset Formula $h:C\morphism D$
+\end_inset
+
+ for objects 
+\begin_inset Formula $A,B,C,D\in\Obj(\hat{\mathsf{S}})$
+\end_inset
+
+ then the morphism 
+\begin_inset Formula $hg=(B,D)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $f=(A,B),$
+\end_inset
+
+ 
+\begin_inset Formula $gf=(A,C)$
+\end_inset
+
+ and so 
+\begin_inset Formula $(hg)f=(A,D)=h(gf)$
+\end_inset
+
+.
+ So,
+ associativity also holds.
+ 
+\end_layout
+
+\begin_layout Standard
+That 
+\begin_inset Formula $A\overset{f}{\longrightarrow}B$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $f1_{A}=f$
+\end_inset
+
+ and 
+\begin_inset Formula $1_{B}f=f$
+\end_inset
+
+ is obvious because 
+\begin_inset Formula $1_{A}=(A,A)$
+\end_inset
+
+ and 
+\begin_inset Formula $f=(A,B)$
+\end_inset
+
+ so the morphism 
+\begin_inset Formula $f1_{A}$
+\end_inset
+
+ is just 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+ while the morphism 
+\begin_inset Formula $1_{B}f$
+\end_inset
+
+ is also just 
+\begin_inset Formula $(A,B)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Example*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Eg-3.3"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Fix a set 
+\begin_inset Formula $S$
+\end_inset
+
+ and a relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+ that is reflexive and transitive.
+ Then define a category 
+\begin_inset Formula $\catC$
+\end_inset
+
+ as such.
+\end_layout
+
+\begin_layout Itemize
+the objects of 
+\begin_inset Formula $\catC$
+\end_inset
+
+ are elements of 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $a,b\in\Obj(\catC)$
+\end_inset
+
+ then 
+\begin_inset Formula $\Hom_{\catC}(a,b)$
+\end_inset
+
+ is a set containing the element 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ if 
+\begin_inset Formula $a\sim b$
+\end_inset
+
+ and 
+\begin_inset Formula $\Hom_{\catC}(a,b)=\emptyset$
+\end_inset
+
+ otherwise.
+ 
+\end_layout
+
+\begin_layout Standard
+By reflexivity,
+ 
+\begin_inset Formula $\Hom(a,a)$
+\end_inset
+
+ is always nonempty because it contains the element 
+\begin_inset Formula $1_{a}=(a,a)$
+\end_inset
+
+ always.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f:a\to b$
+\end_inset
+
+ and 
+\begin_inset Formula $g:b\to c$
+\end_inset
+
+ are any two morphisms then this means that 
+\begin_inset Formula $a\sim b$
+\end_inset
+
+ and 
+\begin_inset Formula $b\sim c$
+\end_inset
+
+.
+ By transitivity,
+ 
+\begin_inset Formula $a\sim c$
+\end_inset
+
+ and so 
+\begin_inset Formula $gf:A\to C$
+\end_inset
+
+ is a well defined morphism.
+ In fact it is the element 
+\begin_inset Formula $(a,c).$
+\end_inset
+
+ That is,
+ 
+\begin_inset Formula $\Hom(a,c)=\{gf\}=\{(a,c)\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f:a\to b,g:b\to c$
+\end_inset
+
+ and 
+\begin_inset Formula $h:c\to d$
+\end_inset
+
+ are morphisms in 
+\begin_inset Formula $\catC$
+\end_inset
+
+ then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $hg=(b,d)$
+\end_inset
+
+ and 
+\begin_inset Formula $gf=(a,c)$
+\end_inset
+
+ so 
+\begin_inset Formula $(hg)f=(a,d)=h(gf)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Next,
+ for any morphism 
+\begin_inset Formula $f:a\to b$
+\end_inset
+
+,
+ 
+\begin_inset Formula $1_{b}f=(a,b)=f$
+\end_inset
+
+ and 
+\begin_inset Formula $f1_{a}=(a,b)=f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+An interesting fact about this category is that given any morphism 
+\begin_inset Formula $f:a\to b$
+\end_inset
+
+,
+ take any object 
+\begin_inset Formula $c$
+\end_inset
+
+ and a pair of morphisms 
+\begin_inset Formula $\alpha',\alpha'':c\to a$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $c,\alpha',\alpha''$
+\end_inset
+
+ are so that
+\begin_inset Formula 
+\[
+f\alpha'=f\alpha''
+\]
+
+\end_inset
+
+ then this implies that 
+\begin_inset Formula $\alpha'=\alpha''$
+\end_inset
+
+.
+ In fact 
+\begin_inset Formula $\alpha'=\alpha''$
+\end_inset
+
+ is always true because 
+\begin_inset Formula $\Hom_{\catC}(c,a)$
+\end_inset
+
+ is always a singleton or empty.
+ This discussion elucidates the fact that every morphism in this category is a 
+\emph on
+monomorphism
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In fact,
+ take any morphism 
+\begin_inset Formula $f:a\to b$
+\end_inset
+
+ and fix any object 
+\begin_inset Formula $c\in\Obj(\catC)$
+\end_inset
+
+.
+ Take any pair of morphisms 
+\begin_inset Formula $\beta',\beta'':b\to c$
+\end_inset
+
+ so that 
+\begin_inset Formula $\beta'f=\beta''f$
+\end_inset
+
+.
+ Then,
+ 
+\begin_inset Formula $\beta'=\beta''$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Once again,
+ 
+\begin_inset Formula $\beta'=\beta''$
+\end_inset
+
+ always holds for the same reason as above.
+ Also,
+ 
+\begin_inset Formula $\beta'f=\beta''f$
+\end_inset
+
+ also always holds because 
+\begin_inset Formula $\beta'f=(b,c)$
+\end_inset
+
+ and so is 
+\begin_inset Formula $\beta''f$
+\end_inset
+
+.
+ Every morphism in this category is an 
+\emph on
+epimorphism.
+\end_layout
+
+\begin_layout Example*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Eg-3.5"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\catC$
+\end_inset
+
+ be a category and fix 
+\begin_inset Formula $A\in\Obj(\catC)$
+\end_inset
+
+.
+ We will define another category from 
+\begin_inset Formula $\catC$
+\end_inset
+
+,
+ denoted 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ as 
+\end_layout
+
+\begin_layout Itemize
+objects of 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ are morphisms from objects of 
+\begin_inset Formula $\catC$
+\end_inset
+
+ to 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ That is,
+ elements of 
+\begin_inset Formula $\Obj(\catC_{A})$
+\end_inset
+
+ are of the form 
+\begin_inset Formula $Z\overset{f}{\longrightarrow}A$
+\end_inset
+
+ for any object 
+\begin_inset Formula $Z\in\Obj(\catC)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+morphisms between two objects 
+\begin_inset Formula $f,g\in\Obj(\catC_{A})$
+\end_inset
+
+ are diagrams comprising of objects of 
+\begin_inset Formula $\catC$
+\end_inset
+
+ and the appropriate morphisms between them.
+ 
+\end_layout
+
+\begin_layout Standard
+Given two objects 
+\begin_inset Formula $f\colon Z_{1}\to A$
+\end_inset
+
+ and 
+\begin_inset Formula $g\colon Z_{2}\to A$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ a morphism between 
+\begin_inset Formula $f,g$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ is a 
+\emph on
+commutative diagram 
+\emph default
+of the form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsMyxbMSwyLCJDIl0sWzAsMCwiWl8xIl0sWzIsMCwiWl8yIl0sWzIsMCwiZyJdLFsxLDAsImYiLDJdLFsxLDIsIlxcc2lnbWEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_2} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	& A
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+sigma",
+ dashed,
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["f"',
+ from=1-1,
+ to=3-2]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["g",
+ from=1-3,
+ to=3-2]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show that this construction of 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ forms a category.
+ 
+\end_layout
+
+\begin_layout Standard
+First,
+ we will show that 
+\begin_inset Formula $\End_{\catC_{A}}(f)$
+\end_inset
+
+ for any 
+\begin_inset Formula $f\in\Obj(\catC_{A})$
+\end_inset
+
+ is nonempty and contains the identity morphism by noticing that the diagram 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsMyxbMSwyLCJDIl0sWzAsMCwiWiJdLFsyLDAsIloiXSxbMiwwLCJmIl0sWzEsMCwiZiIsMl0sWzEsMiwiMV9aIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	Z && Z 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	& A
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{1_Z}",
+ dashed,
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["f"',
+ from=1-1,
+ to=3-2]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["f",
+ from=1-3,
+ to=3-2]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $1_{Z}$
+\end_inset
+
+ is the identity morphism for the object 
+\begin_inset Formula $Z\in\Obj(\catC)$
+\end_inset
+
+.
+ This diagram is the element 
+\begin_inset Formula $1_{f}\in\Hom_{\catC_{A}}(f,f)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Take any two morphisms 
+\begin_inset Formula $f_{1}\to f_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}\to f_{3}$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ next.
+\end_layout
+
+\begin_layout Standard
+We will show that this defines a new morphism which is the composition of these two morphisms.
+ For this we concatenate the commutative diagrams 
+\begin_inset Formula $f_{1}\to f_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}\to f_{3}$
+\end_inset
+
+ side by side.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsNCxbMiwyLCJBIl0sWzAsMCwiWl8xIl0sWzIsMCwiWl8yIl0sWzQsMCwiWl8zIl0sWzEsMCwiZl8xICIsMl0sWzIsMCwiZl8yIl0sWzEsMiwiXFxzaWdtYSJdLFszLDAsImZfMyJdLFsyLDMsIlxcdGF1Il1d
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_2} && {Z_3} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	&& A
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+sigma",
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1 }"',
+ from=1-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+tau",
+ from=1-3,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_2}",
+ from=1-3,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3}",
+ from=1-5,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show that the following diagram contained in this diagram also commutes.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsMyxbMiwyLCJBIl0sWzAsMCwiWl8xIl0sWzQsMCwiWl8zIl0sWzIsMCwiZl8zIl0sWzEsMCwiZl8xICIsMl0sWzEsMiwiXFxzaWdtYSBcXHRhdSJdXQ==
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} &&&& {Z_3} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	&& A
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+tau
+\backslash
+sigma}",
+ from=1-1,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1 }"',
+ from=1-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3}",
+ from=1-5,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Indeed,
+ since 
+\begin_inset Formula $f_{1}=f_{2}\sigma$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}=f_{3}\tau$
+\end_inset
+
+ from the previous diagram due to commutativity so 
+\begin_inset Formula $f_{1}=f_{3}\tau\sigma=f_{3}(\tau\sigma)$
+\end_inset
+
+ which proves that this diagram also commutes,
+ therefore,
+ the composition of the morphisms 
+\begin_inset Formula $f_{1}\to f_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}\to f_{3}$
+\end_inset
+
+ is also a commutative diagram which describes the morphism 
+\begin_inset Formula $f_{1}\to f_{3}$
+\end_inset
+
+ between objects 
+\begin_inset Formula $f_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{3}$
+\end_inset
+
+ of the category 
+\begin_inset Formula $\catC_{A}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next,
+ suppose there are three morphisms 
+\begin_inset Formula $f_{1}\to f_{2}\to f_{3}\to f_{4}$
+\end_inset
+
+ of objects 
+\begin_inset Formula $f_{1},f_{2},f_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{4}$
+\end_inset
+
+ in 
+\begin_inset Formula $\Obj(\catC_{A})$
+\end_inset
+
+.
+ That means there are three diagrams as below 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsNSxbMiwyLCJBIl0sWzIsMCwiWl8yIl0sWzAsMCwiWl8xIl0sWzQsMCwiWl8zIl0sWzQsMiwiWl80Il0sWzEsMCwiZl8yICIsMl0sWzIsMCwiZl8xICIsMl0sWzQsMCwiZl80Il0sWzIsMSwiXFxhbHBoYSJdLFszLDAsImZfMyJdLFsxLDMsIlxcYmV0YSJdLFszLDQsIlxcZ2FtbWEiXV0=
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_2} && {Z_3} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	&& A && {Z_4}
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+alpha",
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1 }"',
+ from=1-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+beta",
+ from=1-3,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_2 }"',
+ from=1-3,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3}",
+ from=1-5,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+gamma",
+ from=1-5,
+ to=3-5]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_4}",
+ from=3-5,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $f_{1}\to f_{2}$
+\end_inset
+
+ is a morphism of objects 
+\begin_inset Formula $f_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+,
+ the associated diagram above for the two morphisms is commutative.
+ The commutativity relation is 
+\begin_inset Formula $f_{1}=f_{2}\alpha$
+\end_inset
+
+.
+ Similarly,
+ we argue for the other three diagrams and find the following equalities by commutativity:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f_{2} & =f_{3}\beta\text{ and}\\
+f_{3} & =f_{4}\gamma
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us set 
+\begin_inset Formula $\sigma\coloneqq f_{1}\to f_{2},\tau\coloneqq f_{2}\to f_{3},\delta\coloneqq f_{3}\to f_{4}$
+\end_inset
+
+ as our diagrams.
+ Then,
+ 
+\end_layout
+
+\begin_layout Standard
+the diagram 
+\begin_inset Formula $\delta\tau$
+\end_inset
+
+ is as
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsMyxbMCwyLCJBIl0sWzAsMCwiWl8yIl0sWzIsMiwiWl80Il0sWzEsMCwiZl8yICIsMl0sWzIsMCwiZl80Il0sWzEsMiwiXFxnYW1tYSBcXGJldGEgIl1d
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_2} && 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	A && {Z_4}
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_2 }"',
+ from=1-1,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+gamma 
+\backslash
+beta }",
+ from=1-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_4}",
+ from=3-3,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the diagram 
+\begin_inset Formula $(\delta\tau)\sigma$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJaXzEiXSxbMCwyLCJBIl0sWzIsMiwiWl80Il0sWzAsMiwiZl80IFxcZ2FtbWEgXFxiZXRhIFxcYWxwaGEgIl0sWzIsMSwiZl80ICJdLFswLDEsImZfMSIsMl1d
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	A && {Z_4}
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1}"',
+ from=1-1,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+gamma 
+\backslash
+beta 
+\backslash
+alpha }",
+ from=1-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_4 }",
+ from=3-3,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next,
+ the diagram 
+\begin_inset Formula $\tau\sigma$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_3}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	A 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1}"',
+ from=1-1,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+beta 
+\backslash
+alpha}",
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3 }",
+ from=1-3,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and finally the diagram for 
+\begin_inset Formula $\delta(\tau\sigma)$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	A && {Z_4}
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1}"',
+ from=1-1,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+gamma 
+\backslash
+beta 
+\backslash
+alpha }",
+ from=1-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_4 }",
+ from=3-3,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So,
+ 
+\begin_inset Formula $\delta(\tau\sigma)=(\delta\tau)\sigma$
+\end_inset
+
+ proves associativity.
+ 
+\end_layout
+
+\begin_layout Standard
+That given any morphism 
+\begin_inset Formula $\alpha:f_{1}\to f_{2}$
+\end_inset
+
+ of 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $1_{f_{2}}\alpha=\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha1_{f_{1}}=\alpha$
+\end_inset
+
+ is obvious from the same kinds of steps taken above.
+ 
+\end_layout
+
+\begin_layout Example*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Eg-3.6"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the category 
+\begin_inset Formula $\catC$
+\end_inset
+
+ associated to the set of integers with the 
+\begin_inset Formula $\leq$
+\end_inset
+
+ being 
+\begin_inset Formula $\sim$
+\end_inset
+
+ as in Eg-3.3.
+ 
+\end_layout
+
+\begin_layout Standard
+fix an object 
+\begin_inset Formula $A=3$
+\end_inset
+
+.
+ Then,
+ any object of 
+\begin_inset Formula $\catC_{A}$
+\end_inset
+
+ is a pair 
+\begin_inset Formula $(x,3)\in\bZ\times\bZ$
+\end_inset
+
+ with 
+\begin_inset Formula $x\leq3$
+\end_inset
+
+.
+ There is a morphism 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(m,3)\to(n,3)$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $m\leq n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We learned about the slice category,
+ now let us see an example of a category that is dual to this - the coslice category.
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Eg-3.8"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ For a concrete example,
+ take the category 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ for which 
+\begin_inset Formula $\Obj(\mathsf{Set)}$
+\end_inset
+
+ is the class of all sets.
+ Fix a singleton 
+\begin_inset Formula $\{*\}$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+.
+ Next,
+ we define a new category 
+\begin_inset Formula $\mathsf{Set}^{*}$
+\end_inset
+
+ whose objects are all the morphisms 
+\begin_inset Formula $f:\{*\}\to A$
+\end_inset
+
+ for any object 
+\begin_inset Formula $A$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathsf{Set}.$
+\end_inset
+
+ Any object in 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ may be identified as a pair 
+\begin_inset Formula $(S,s)$
+\end_inset
+
+ where 
+\begin_inset Formula $s=f(*)$
+\end_inset
+
+ because the information of any object in 
+\begin_inset Formula $\mathsf{Set}^{*}$
+\end_inset
+
+ comprises of the choice of the nonempty set 
+\begin_inset Formula $S$
+\end_inset
+
+ and of an element 
+\begin_inset Formula $s\in S$
+\end_inset
+
+ that 
+\begin_inset Formula $f$
+\end_inset
+
+ maps 
+\begin_inset Formula $*$
+\end_inset
+
+ to in 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Example
+A morphism between two objects 
+\begin_inset Formula $(S,s)$
+\end_inset
+
+ and 
+\begin_inset Formula $(T,t)$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathsf{Set}^{*}$
+\end_inset
+
+ corresponds to a map 
+\begin_inset Formula $\sigma:S\to T$
+\end_inset
+
+ 
+\emph on
+such that 
+\emph default
+
+\begin_inset Formula $\sigma(s)=t$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Example
+Objects in 
+\begin_inset Formula $\mathsf{Set}^{*}$
+\end_inset
+
+ are called 
+\emph on
+pointed sets
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.1"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\catC$
+\end_inset
+
+ be a category.
+ Consider a structure 
+\begin_inset Formula $\catC^{\mathsf{op}}$
+\end_inset
+
+ with 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Obj(\catC^{\mathsf{op}})\coloneqq\Obj(\catC)$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+for a pair of objects 
+\begin_inset Formula $A,B\in\Obj(\catC^{\mathsf{op}})$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Hom_{\catC^{\mathsf{op}}}(A,B)\coloneqq\Hom_{\catC}(B,A)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+that is,
+ given any pair of objects 
+\begin_inset Formula $A,B$
+\end_inset
+
+ of the category 
+\begin_inset Formula $\catC^{\mathsf{op}}$
+\end_inset
+
+,
+ arrows from 
+\begin_inset Formula $A$
+\end_inset
+
+ to 
+\begin_inset Formula $B$
+\end_inset
+
+ are arrows from 
+\begin_inset Formula $B$
+\end_inset
+
+ to 
+\begin_inset Formula $A$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+Take any pair of objects 
+\begin_inset Formula $A,B\in\Obj(\catC^{\mathsf{op}})$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula 
+\[
+\ocircle_{\catC^{\mathsf{op}}}\colon\Hom_{\catC^{\mathsf{op}}}(A,B)\times\Hom_{\catC^{\mathsf{op}}}(B,C)\to\Hom_{\catC^{\mathsf{op}}}(A,C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+by the following rule:
+ 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+g\ocircle_{\catC^{\mathsf{op}}}f\coloneqq f\ocircle g
+\]
+
+\end_inset
+
+ where the 
+\begin_inset Formula $\ocircle$
+\end_inset
+
+ in the right hand side is the composition of 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\Hom_{\catC}(A,A)$
+\end_inset
+
+ is nonempty for every 
+\begin_inset Formula $A\in\Obj(\catC)$
+\end_inset
+
+ and objects of 
+\begin_inset Formula $\catC^{\mathsf{op}}$
+\end_inset
+
+ are simply objects in 
+\begin_inset Formula $\catC$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Hom_{\catC^{\mathsf{op}}}(A,A)$
+\end_inset
+
+ is also nonempty and contains the same 
+\begin_inset Formula $1_{A}\in\Hom_{\catC}(A,A)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The morphism 
+\begin_inset Formula $f\ocircle_{\catC^{\mathsf{op}}}g$
+\end_inset
+
+ is an element of 
+\begin_inset Formula $\Hom_{\catC^{\mathsf{op}}}(A,C)$
+\end_inset
+
+ because 
+\begin_inset Formula $f\circ g$
+\end_inset
+
+ is an element of 
+\begin_inset Formula $\Hom_{\catC}(C,A)$
+\end_inset
+
+.
+ The well definedness of the map 
+\begin_inset Formula $\ocircle_{\catC^{\mathsf{op}}}$
+\end_inset
+
+follows immediately from the well definedness of 
+\begin_inset Formula $\ocircle$
+\end_inset
+
+.
+ Just take elements 
+\begin_inset Formula $f,f'\in\Hom_{\catC}(B,A)$
+\end_inset
+
+ and 
+\begin_inset Formula $g,g'\in\Hom_{\catC}(C,B)$
+\end_inset
+
+ with 
+\begin_inset Formula $f=f'$
+\end_inset
+
+,
+ 
+\begin_inset Formula $g=g'$
+\end_inset
+
+ and then notice that 
+\begin_inset Formula 
+\begin{align*}
+g\ocircle_{\catC^{\mathsf{op}}}f= & f\ocircle g\\
+= & f'\ocircle g'\\
+= & g'\ocircle_{\catC^{\mathsf{op}}}f'
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next,
+ take the morphisms 
+\begin_inset Formula $f:A\to B,g:B\to C,h:C\to D$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC^{\mathsf{op}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then,
+ 
+\begin_inset Formula 
+\begin{align*}
+(h\ocircle_{\catC^{\mathsf{op}}}g)\ocircle_{\catC^{\mathsf{op}}}f & =f\ocircle(g\ocircle h)\\
+ & =(f\ocircle g)\ocircle h\\
+ & =h\ocircle_{\catC^{\mathsf{op}}}\big(g\ocircle_{\catC^{\mathsf{op}}}f\bigr)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+showing that the composition is associative.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally,
+ pick a morphism 
+\begin_inset Formula $f\in\Hom_{\catC^{\mathsf{op}}}(A,B)$
+\end_inset
+
+.
+ Then,
+ 
+\begin_inset Formula 
+\begin{align*}
+1_{B}\ocircle_{\catC^{\mathsf{op}}}f= & f\ocircle1_{B}\\
+= & fp
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\begin{align*}
+f\ocircle_{\catC^{\mathsf{op}}}1_{A}= & 1_{A}\ocircle f\\
+= & f
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This completes our construction and proof of construction of the opposite category.
+\end_layout
+
+\begin_layout Remark*
+We choose to indicate the morphism 
+\begin_inset Formula $f\in\Hom_{\catC^{\mathsf{op}}}(A,B)$
+\end_inset
+
+ by just the same symbol when we consider it in 
+\begin_inset Formula $\Hom_{\catC}(B,A)$
+\end_inset
+
+.
+ This might not be a bit tricky to deal with initially but it does make writing the proof quite more convenient.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.2"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is a finite set,
+ how large is 
+\begin_inset Formula $\End_{\mathsf{Set}}(A)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Solution*
+The morphisms in 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ are simply functions between the objects (sets) of 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+.
+ So we are simply counting the number of functions from a finite set to itself.
+ 
+\end_layout
+
+\begin_layout Solution*
+I claim that for a finite set 
+\begin_inset Formula $A$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements,
+ there are 
+\begin_inset Formula $n^{n}$
+\end_inset
+
+ functions 
+\begin_inset Formula $A\to A$
+\end_inset
+
+.
+ Since bijections compose to give bijections,
+ it suffices to prove the statement for a set of the form 
+\begin_inset Formula $\{1,\dots,n\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+We notice that there is a bijection 
+\begin_inset Formula $\{1,\dots,n\}^{\{1,\dots,n\}}\to\prod^{n}_{k=1}\{1,\dots,n\}$
+\end_inset
+
+.
+ Indeed,
+ the map 
+\begin_inset Formula 
+\[
+f\mapsto(f(i))^{n}_{i=1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+is the obvious candidate.
+ By the product rule of combinatorics,
+ we see that 
+\begin_inset Formula $\prod^{n}_{k=1}\{1,\dots,n\}$
+\end_inset
+
+ has cardinality 
+\begin_inset Formula $n^{n}$
+\end_inset
+
+ and we are done.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.3"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Formulate precisely what it means to say that 
+\begin_inset Formula $1_{a}$
+\end_inset
+
+ is an identity with respect to composition in Eg-3.3.
+ 
+\end_layout
+
+\begin_layout Solution*
+Take any pair of objects 
+\begin_inset Formula $a,b\in\Obj(\catC)$
+\end_inset
+
+.If 
+\begin_inset Formula $\Hom_{\catC}(a,b)$
+\end_inset
+
+ is empty,
+ then the statement is trivially true.
+ If not then pick 
+\begin_inset Formula $(a,b)\in\Hom_{\catC}(a,b)$
+\end_inset
+
+.
+ It is clear that we have 
+\begin_inset Formula 
+\[
+(a,b)1_{a}=(a,b)(a,a)=(a,b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+which means that 
+\begin_inset Formula $1_{a}$
+\end_inset
+
+ is the identity with respect to composition.
+ We can do similar for 
+\begin_inset Formula $1_{b}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.4"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Can we define a category in the style of Eg-3.3 using the relation 
+\begin_inset Formula $<$
+\end_inset
+
+ on 
+\begin_inset Formula $\bZ.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Every 
+\begin_inset Formula $\Hom_{\catC}(a,a)$
+\end_inset
+
+ needs to be nonemtpy.
+ If we try to define a category using < we miss out on 
+\begin_inset Formula $a\sim a$
+\end_inset
+
+ which does not give us any obvious candidate of 
+\begin_inset Formula $1_{a}\in\Hom_{\catC}(a,a)$
+\end_inset
+
+.
+ Shortly put,
+ 
+\begin_inset Formula $<$
+\end_inset
+
+ is not reflexive.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.5"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Define in what sense the category constructed in Eg-3.4 coincides with that in Eg-3.3.
+\end_layout
+
+\begin_layout Solution*
+Given a set 
+\begin_inset Formula $S$
+\end_inset
+
+,
+ define the relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+ on 
+\begin_inset Formula $\powerset(S)$
+\end_inset
+
+ as such:
+ any two subsets 
+\begin_inset Formula $A,B$
+\end_inset
+
+ of 
+\begin_inset Formula $S$
+\end_inset
+
+ are related by 
+\begin_inset Formula $\sim$
+\end_inset
+
+,
+ as in 
+\begin_inset Formula $A\sim B$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+.
+ The rest is obvious.
+ 
+\end_layout
+
+\begin_layout Solution*
+Simply put,
+ the 
+\begin_inset Formula $\subseteq$
+\end_inset
+
+ relation is a preorder.
+ That is,
+ 
+\begin_inset Formula $A\subseteq A$
+\end_inset
+
+ for every susbet 
+\begin_inset Formula $A$
+\end_inset
+
+ of 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $A\subseteq B,B\subseteq C$
+\end_inset
+
+ means 
+\begin_inset Formula $A\subseteq C$
+\end_inset
+
+ for any subsets 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ of 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.8"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ A 
+\emph on
+subcategory
+\emph default
+ 
+\begin_inset Formula $\catC'$
+\end_inset
+
+ of a category 
+\begin_inset Formula $\catC$
+\end_inset
+
+ consists of a collection of objects of 
+\begin_inset Formula $\catC$
+\end_inset
+
+,
+ with morphisms 
+\begin_inset Formula $\Hom_{\catC'}(A,B)\subseteq\Hom_{\catC}(A,B)$
+\end_inset
+
+ for all objects 
+\begin_inset Formula $A,B\in\Obj(\catC')$
+\end_inset
+
+,
+ such that identities and compositions in 
+\begin_inset Formula $\catC$
+\end_inset
+
+ make 
+\begin_inset Formula $\catC'$
+\end_inset
+
+ into a category.
+ A subcategory 
+\begin_inset Formula $\catC'$
+\end_inset
+
+ is full if 
+\begin_inset Formula $\Hom_{\catC'}(A,B)=\Hom_{\catC}(A,B)$
+\end_inset
+
+ for all 
+\begin_inset Formula $A,B\in\Obj(\catC')$
+\end_inset
+
+.
+ Construct a category of 
+\emph on
+infinite sets 
+\emph default
+and explain how it may be viewed as a full subcategory of 
+\begin_inset Formula $\mathsf{Set}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+We define a category 
+\begin_inset Formula $\mathsf{InfSet}$
+\end_inset
+
+ as such:
+\end_layout
+
+\begin_layout Itemize
+the objects of 
+\begin_inset Formula $\mathsf{InfSet}$
+\end_inset
+
+ are simply the infinite sets ni 
+\begin_inset Formula $\Obj(\mathsf{Set)}$
+\end_inset
+
+,
+ that is 
+\begin_inset Formula $\Obj(\mathsf{InfSet)}\subseteq\Obj(\mathsf{Set})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+given any two infinite sets 
+\begin_inset Formula $A,B\in\Obj(\mathsf{InfSet)}$
+\end_inset
+
+ we define the set of morphisms 
+\begin_inset Formula $A\to B$
+\end_inset
+
+ by 
+\begin_inset Formula $\Hom_{\mathsf{InfSet}}(A,B)\coloneqq\Hom_{\mathsf{Set}}(A,B)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+That these constructions make 
+\begin_inset Formula $\mathsf{InfSet}$
+\end_inset
+
+ into a subcategory of 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ is obvious.
+ It has the same identity and compositions as 
+\begin_inset Formula $\mathsf{Set}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+That it is a full subcategory of 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ is by definition.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.6"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Define a category 
+\begin_inset Formula $\mathsf{V}$
+\end_inset
+
+ by taking 
+\begin_inset Formula $\Obj(\mathsf{V})\coloneqq\bN$
+\end_inset
+
+ and letting 
+\begin_inset Formula $\Hom_{\mathsf{v}}(n,m)\coloneqq\text{the set of }m\times n\text{ matrices with real entries, for all }n,m\in\bN.$
+\end_inset
+
+ Use product of matrices to define composition.
+ Does this category 
+\emph on
+feel 
+\emph default
+familiar?
+ 
+\end_layout
+
+\begin_layout Solution*
+Given objects 
+\begin_inset Formula $j,k,l\in\Obj(\mathsf{V)},$
+\end_inset
+
+ define morphisms 
+\begin_inset Formula $M_{k\times j}\in\Hom_{\mathsf{V}}(j,k),N_{l\times k}\in\Hom_{\mathsf{V}}(k,l)$
+\end_inset
+
+ where 
+\begin_inset Formula $M_{k\times j}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{l\times k}$
+\end_inset
+
+ are 
+\begin_inset Formula $k\times j$
+\end_inset
+
+ and 
+\begin_inset Formula $l\times k$
+\end_inset
+
+ shaped matrices of reals respectively.
+ Define composition
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\Hom(j,k)\times\Hom(k,l)\to\Hom(j,l)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+by the rule 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $M_{k\times j}\circ N_{l\times k}\coloneqq N_{l\times k}M_{k\times j}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Solution*
+where the product on the right hand side is matrix multiplication which is well defined for 
+\begin_inset Formula $l\times k$
+\end_inset
+
+ and 
+\begin_inset Formula $k\times j$
+\end_inset
+
+ matrices.
+ The result is a matrix 
+\begin_inset Formula $l\times j$
+\end_inset
+
+ which is an element of 
+\begin_inset Formula $\Hom_{\mathsf{V}}(j,l)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+Given any morphism 
+\begin_inset Formula $M_{n\times m}$
+\end_inset
+
+,
+ consider the morphism 
+\begin_inset Formula $1_{n}\in\Hom(n,n)$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $1_{n}M_{n\times m}=M$
+\end_inset
+
+ and 
+\begin_inset Formula $M_{n\times m}1_{m}=M$
+\end_inset
+
+ which shows that 
+\begin_inset Formula $V$
+\end_inset
+
+ is a category.
+ 
+\end_layout
+
+\begin_layout Solution*
+This is very familiar to the category 
+\begin_inset Formula $\mathsf{Vect}$
+\end_inset
+
+ of all finite dimensional 
+\begin_inset Formula $k-$
+\end_inset
+
+vector spaces.
+ The objects are finite dimensional spaces and the morphisms are linear maps.
+ The spaces can be identified by their dimension which is a natural number and the linear maps can be identified by matrices.
+ This suggests there is a sense of 
+\emph on
+isomorphism 
+\emph default
+or 
+\emph on
+sameness
+\emph default
+ between these two categories.
+ Such ideas have not been covered yet in the book so we will not dig further into them for now.
+ 
+\end_layout
+
+\begin_layout Solution*
+The matrix of 0 rows and 0 columns can represent a linear operator on the trivial vector space 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+ which has dimension 0.
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.7"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Define carefully objects and morphisms in Eg-3.7,
+ and draw the diagram corresponding to composition.
+\end_layout
+
+\begin_layout Solution*
+Suppose 
+\begin_inset Formula $\catC$
+\end_inset
+
+ is given as a category.
+ Then,
+ fix some object 
+\begin_inset Formula $S\in\Obj(\catC)$
+\end_inset
+
+.
+ Define the new category 
+\begin_inset Formula $\catC^{S}$
+\end_inset
+
+ as follows:
+ 
+\end_layout
+
+\begin_layout Itemize
+objects in 
+\begin_inset Formula $\catC^{S}$
+\end_inset
+
+ are morphisms 
+\begin_inset Formula $S\to A$
+\end_inset
+
+ for objects 
+\begin_inset Formula $A\in\Obj(\catC)$
+\end_inset
+
+,
+ 
+\end_layout
+
+\begin_layout Itemize
+morphisms between objects 
+\begin_inset Formula $f_{1,}f_{2}$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC^{s}$
+\end_inset
+
+ are diagrams as follows:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	& S 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_2} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["
+\backslash
+sigma",
+ dashed,
+ from=3-3,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["f_{1}"',
+ from=1-2,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["f_{2}",
+ from=1-2,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $f_{1}=\sigma f_{2}$
+\end_inset
+
+;
+ that is to say that the diagrams are commutative.
+ 
+\end_layout
+
+\begin_layout Standard
+Here,
+ 
+\begin_inset Formula $Z_{1},Z_{2}\in\Obj(\catC)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Given any object 
+\begin_inset Formula $f:S\to Z\in\Hom_{\catC}(S,Z)$
+\end_inset
+
+ of 
+\begin_inset Formula $\catC^{S}$
+\end_inset
+
+ where 
+\begin_inset Formula $Z\in\Obj(\catC)$
+\end_inset
+
+ there is a diagram 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	& S 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	{Z} && {Z} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{1_f}",
+ dashed,
+ from=3-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f}"',
+ from=1-2,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f}",
+ from=1-2,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which obviously commutes and therefore,
+ if we denote this diagram by 
+\begin_inset Formula $1_{f}$
+\end_inset
+
+ then 
+\begin_inset Formula $1_{f}\in\Hom_{\catC^{S}}(f,f)$
+\end_inset
+
+ for every 
+\begin_inset Formula $f\in\Obj(\catC^{S})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Given two morphisms 
+\begin_inset Formula $f_{1}\to f_{2}\to f_{3}$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC^{S}$
+\end_inset
+
+,
+ we will define their composition by the following commutative diagram:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_2} && {Z_3} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	&& A && 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1}",
+ from=3-3,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_2}",
+ from=3-3,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3}"',
+ from=3-3,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+alpha}",
+ to=1-1,
+ from=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+beta}",
+ to=1-3,
+ from=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This diagram indeed commutes because 
+\begin_inset Formula $f_{1}=\alpha f_{2},f_{2}=\beta f_{3}$
+\end_inset
+
+ so 
+\begin_inset Formula $f_{1}=\alpha\beta f_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which gives the commutative diagram 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} & &  {Z_3} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	& A & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1}",
+ from=3-2,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3}"',
+ from=3-2,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+alpha
+\backslash
+beta}",
+ from=1-3,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which describes a morphism 
+\begin_inset Formula $f_{1}\to f_{3}$
+\end_inset
+
+ proving that compositions exist and are well defined.
+ 
+\end_layout
+
+\begin_layout Standard
+That 
+\begin_inset Formula $1_{f}$
+\end_inset
+
+ is the identity with respect to composition can be proved from this easily.
+ We shall only prove the associativity of compositions next.
+ 
+\end_layout
+
+\begin_layout Standard
+For this,
+ take three morphisms 
+\begin_inset Formula $f_{1}\to f_{2}\to f_{3}\to f_{4}$
+\end_inset
+
+ of objects 
+\begin_inset Formula $f_{1},f_{2},f_{3},f_{4}$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC^{S}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Consider the diagram 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+	{Z_1} && {Z_2} && {Z_3} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+	&& A && {Z_4}
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_1}",
+ to=1-1,
+ from=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_2}",
+ to=1-3,
+ from=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_3}",
+ to=1-5,
+ from=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{f_4}",
+ to=3-5,
+ from=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+alpha}"',
+ from=1-3,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+beta}"',
+ from=1-5,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+	
+\backslash
+arrow["{
+\backslash
+gamma}",
+ from=3-5,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next,
+ we will label the morphisms 
+\begin_inset Formula $\sigma:f_{3}\to f_{4},\tau:f_{2}\to f_{3},\lambda:f_{1}\to f_{2}$
+\end_inset
+
+ and look first at 
+\begin_inset Formula $(\sigma\tau)\lambda$
+\end_inset
+
+.
+ It is clear that the composition 
+\begin_inset Formula $\sigma\tau$
+\end_inset
+
+ has the diagram without 
+\begin_inset Formula $Z_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{3}$
+\end_inset
+
+ in the middle with an arrow 
+\begin_inset Formula $Z_{4}\to Z_{2}$
+\end_inset
+
+ that is the morphism 
+\begin_inset Formula $\beta\gamma$
+\end_inset
+
+.
+ This,
+ composed with 
+\begin_inset Formula $f_{1}$
+\end_inset
+
+ gives us a diagram with no 
+\begin_inset Formula $Z_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}$
+\end_inset
+
+ in the middle with a map 
+\begin_inset Formula $Z_{4}\to Z_{1}$
+\end_inset
+
+ given with the arrow 
+\begin_inset Formula $\alpha\beta\gamma.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Next,
+ we look at 
+\begin_inset Formula $\sigma(\tau\lambda)$
+\end_inset
+
+.
+ Clearly,
+ 
+\begin_inset Formula $\tau\lambda$
+\end_inset
+
+ gives us the diagram without 
+\begin_inset Formula $Z_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}$
+\end_inset
+
+ in the middle with a morphism from 
+\begin_inset Formula $Z_{3}\to Z_{1}$
+\end_inset
+
+ given as 
+\begin_inset Formula $\alpha\beta$
+\end_inset
+
+.
+ Composing this new diagram with the diagram 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ erases the 
+\begin_inset Formula $f_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $Z_{3}$
+\end_inset
+
+ in the middle giving an arrow 
+\begin_inset Formula $Z_{4}\to Z_{1}$
+\end_inset
+
+ which is the morphism 
+\begin_inset Formula $\alpha\beta\gamma$
+\end_inset
+
+.
+ This completes the proof.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Paolo Aluffi(2009)"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
