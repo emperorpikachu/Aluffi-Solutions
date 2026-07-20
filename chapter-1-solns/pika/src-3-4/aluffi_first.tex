@@ -1,10 +1,12 @@
 %% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[14pt,twoside,american]{extarticle}
+\PassOptionsToPackage{natbib=true}{biblatex}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
+\usepackage{dsfont}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -12,7 +14,6 @@
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2cm,rmargin=3cm}
 \usepackage{setspace}
 \usepackage{wasysym}
-\usepackage[authoryear]{natbib}
 \onehalfspacing
 
 \makeatletter
@@ -332,6 +333,7 @@
 \theoremstyle{remark}
 \newtheorem*{rem*}{\protect\remarkname}
 \usepackage{babel}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
 \providecommand{\examplename}{Example}
 \providecommand{\exercisename}{Exercise}
 \providecommand{\remarkname}{Remark}
@@ -683,7 +685,7 @@ category.
 We choose to indicate the morphism $f\in\Hom_{\catC^{\mathsf{op}}}(A,B)$
 by just the same symbol when we consider it in $\Hom_{\catC}(B,A)$.
 This might not be a bit tricky to deal with initially but it does
-make writing the proof quite more convenient.
+make writing the proof quite more convenient. $\hfill\blacksquare$
 \end{rem*}
 \begin{xca*}
 \citet[Ex-3.2]{aluffi} If $A$ is a finite set, how large is $\End_{\mathsf{Set}}(A)$?
@@ -705,7 +707,7 @@ f\mapsto(f(i))^{n}_{i=1}
 
 is the obvious candidate. By the product rule of combinatorics, we
 see that $\prod^{n}_{k=1}\{1,\dots,n\}$ has cardinality $n^{n}$
-and we are done. 
+and we are done. $\hfill\blacksquare$
 \end{sol*}
 \begin{xca*}
 \citet[Ex-3.3]{aluffi} Formulate precisely what it means to say that
@@ -720,7 +722,7 @@ It is clear that we have
 \]
 
 which means that $1_{a}$ is the identity with respect to composition.
-We can do similar for $1_{b}.$ 
+We can do similar for $1_{b}.$ $\hfill\blacksquare$
 \end{sol*}
 \begin{xca*}
 \citet[Ex-3.4]{aluffi} Can we define a category in the style of Eg-3.3
@@ -730,7 +732,7 @@ using the relation $<$ on $\bZ.$
 Every $\Hom_{\catC}(a,a)$ needs to be nonemtpy. If we try to define
 a category using < we miss out on $a\sim a$ which does not give us
 any obvious candidate of $1_{a}\in\Hom_{\catC}(a,a)$. Shortly put,
-$<$ is not reflexive. 
+$<$ is not reflexive. $\hfill\blacksquare$
 \end{sol*}
 \begin{xca*}
 \citet[Ex-3.5]{aluffi} Define in what sense the category constructed
@@ -743,7 +745,7 @@ $A\sim B$ if and only if $A\subseteq B$. The rest is obvious.
 
 Simply put, the $\subseteq$ relation is a preorder. That is, $A\subseteq A$
 for every susbet $A$ of $S$ and $A\subseteq B,B\subseteq C$ means
-$A\subseteq C$ for any subsets $A,B,C$ of $S$. 
+$A\subseteq C$ for any subsets $A,B,C$ of $S$. $\hfill\blacksquare$
 \end{sol*}
 \begin{xca*}
 \citet[Ex-3.8]{aluffi} A \emph{subcategory} $\catC'$ of a category
@@ -767,7 +769,8 @@ That these constructions make $\mathsf{InfSet}$ into a subcategory
 of $\mathsf{Set}$ is obvious. It has the same identity and compositions
 as $\mathsf{Set}.$ 
 
-That it is a full subcategory of $\mathsf{Set}$ is by definition. 
+That it is a full subcategory of $\mathsf{Set}$ is by definition.
+$\hfill\blacksquare$
 \begin{xca*}
 \citet[Ex-3.6]{aluffi} Define a category $\mathsf{V}$ by taking
 $\Obj(\mathsf{V})\coloneqq\bN$ and letting $\Hom_{\mathsf{v}}(n,m)\coloneqq\text{the set of }m\times n\text{ matrices with real entries, for all }n,m\in\bN.$
@@ -803,7 +806,7 @@ not been covered yet in the book so we will not dig further into them
 for now. 
 
 The matrix of 0 rows and 0 columns can represent a linear operator
-on the trivial vector space $\{0\}$ which has dimension 0. 
+on the trivial vector space $\{0\}$ which has dimension 0. $\hfill\blacksquare$
 \end{sol*}
 \begin{xca*}
 \citet[Ex-3.7]{aluffi} Define carefully objects and morphisms in
@@ -912,9 +915,182 @@ us the diagram without $Z_{2}$ and $f_{2}$ in the middle with a
 morphism from $Z_{3}\to Z_{1}$ given as $\alpha\beta$. Composing
 this new diagram with the diagram $\sigma$ erases the $f_{3}$ and
 $Z_{3}$ in the middle giving an arrow $Z_{4}\to Z_{1}$ which is
-the morphism $\alpha\beta\gamma$. This completes the proof. 
-\begin{thebibliography}{Paolo Aluffi (2009)}
-\bibitem[Paolo Aluffi(2009)]{aluffi}
+the morphism $\alpha\beta\gamma$. This completes the proof. $\hfill\blacksquare$
+\begin{xca*}
+\citet[Ex-3.9]{aluffi} Define a morphism between multisets, obtaining
+a category $\mathsf{MSet}$ containing a copy of $\mathsf{Set}$ as
+a full subcategory. Which objects in $\mathsf{MSet}$ determine ordinary
+multisets defined in $2.2$ and how? What does a morphsim of multiset
+look like here? 
+\end{xca*}
+\begin{sol*}
+TODO 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-3.10]{aluffi} Since the objects of a category $\catC$
+are not necessarily sets, it is not clear how to make sense of a notion
+of 'subobjects' in general. In some situations, it does make sense
+to talk about subobjects, and the subobjects of any given object A
+in $\catC$ are in one-to-one correspondence with the morphism $A\to\Omega$
+for a fixed, special object $\Omega$ of $\catC$, called a subobject
+classifier. Show that $\mathsf{Set}$ has a subobject classifier.
+$\hfill\blacksquare$
+\end{xca*}
+\begin{sol*}
+Fix $\Omega\coloneqq\{0,1\}\in\Obj(\mathsf{Set})$. Clearly every
+subobject of a set $A$ in $\Obj(\mathsf{Set})$ should be its subset
+and every subset $B$ of $A$ can be identified by its indicator $B\to\Omega,b\mapsto1$
+if element $b$ of $A$ satisifes $b\in B$ and $b\mapsto0$ otherwise.
+The set of subobjects of $A$ should be the $\powerset(A)$ so we
+will establish a bijection $f:\powerset(A)\to\{0,1\}^{A}.$
+
+This bijection will be given by the map $B\mapsto\one_{B}$ where
+$\one_{B}$ is the indicator of the set $B$ in $A$. This map is
+injective because $\one_{C}=\one_{B}$ says an element $x\in A$ satisfies
+$x\in C$ if and only if $x\in B$. So, $C=B$. 
+
+For surjectivity, suppose we are given a map $g\in\{0,1\}^{A}$. We
+will find a subset $B\subseteq A$ so that $f(B)=g$. Set $B\coloneqq g^{-1}(1)$.
+Then, $f(B)=\one_{B}.$ If we show that $\one_{B}=g$ on $A$ then
+we are done. So, take any $a\in A$. If $a\in B$ then $\one_{B}(a)=1$
+and $g(a)=1$ because $a\in g^{-1}(1)$. If $a\in A\setminus B$ then
+$\one_{B}(a)=0$ while $g(a)=0$ because $a\notin g^{-1}(1)$ and
+every point of $A$ must map under $g$ to either 0 or 1. Therefore,
+$g=\one_{B}$ and so $f(B)=\one_{B}=g$.
+
+This shows that $\{0,1\}$ is a subobject classifier for $\mathsf{Set}.$
+\end{sol*}
+%
+If in a set $S$ we equip it by the equality relation $\sim\coloneqq=$
+then the category $\catC$ whose objects are $\Obj(\catC)=S$ and
+morphisms are simply identities $(a,a)$ for every object $a\in S$
+(all the morphisms are identities because no $a\sim b$ for distinct
+$a$ and $b$in $S$). This is a catetgory in which every morphism
+is an isomorphism because theyre all identity. $\hfill\blacksquare$
+\begin{xca*}
+\citet[Ex-4.1]{aluffi} Suppose we are given $n$ different morphisms
+$f_{1},\dots,f_{n}$ so that $f_{k}\circ f_{k+1}$ is always well
+defined for $k=1,\dots,n-1$. Then, any valid expression involving
+parenthesis $($, $)$, elements $f_{1,}\dots,f_{k}$ and the composition
+operator $\circ$ is always independent of the placement of the parenthesis. 
+\end{xca*}
+\begin{sol*}
+Let us denote by $E_{k}$ a well formed expression of length $k$.
+By this we mean that there are $k$ morphisms $f_{1},\dots,f_{k}$
+in $E_{k}$, $k-1$ composition operators $\circ$ and an arbitrary
+number of appropriately nested parenthesis. 
+
+It suffices to show that any $E_{k}$ can be equivalently written
+in the form $(\dots(f_{1}\circ f_{2})\circ f_{3})\circ f_{4})\circ\dots)\circ f_{k-1})\circ f_{k}$
+which allows us to speak of the unique legal expression involving
+$k$ morphisms $f_{1},\dots,f_{k}$ and we can simply write that as
+$f_{1}\circ f_{2}\circ\dots\circ f_{k}.$ 
+
+We proceed by strong induction on $n$. 
+
+For the base case of $n=3$, $f_{1}\circ(f_{2}\circ f_{3})=(f_{1}\circ f_{2})\circ f_{3}$
+is simply the associativity of $\circ$ in $\catC$. 
+
+Our induction hypothesis is that $K_{k}=(\dots(f_{1}\circ f_{2})\circ f_{3})\circ f_{4})\circ\dots)\circ f_{n-1})\circ f_{n}$
+for all expressions $K_{k}$ of length $k\in\bZ_{>0}$ with $3\leq k\leq n$. 
+
+Now let $K_{n+1}$ have length $n+1$. Then, there are $l,m\in\bZ_{>0}$
+such that $l+m=n+1$ and expressions $K_{l}$ and $K_{m}$ such that
+$K_{n+1}=K_{l}\circ K_{m}.$ Now, there are two cases: 
+
+Case 1: $m=1$. Then, $l=n$, $K_{m}=f_{n+1}$. So, by the induction
+hypothesis 
+
+\[
+K_{l}=(\dots(f_{1}\circ f_{2})\circ\dots)\circ f_{n-1})\circ f_{n}
+\]
+ Consequently, 
+\[
+K_{n+1}=(\dots(f_{1}\circ f_{2})\circ\dots)\circ f_{n-1})\circ f_{n})\circ f_{n+1}.
+\]
+
+Case 2: m > 1. By the induction hypothesis, $K_{m}$ can be written
+in the form $K_{m}=K_{m-1}\circ f_{n+1}$, and so 
+
+\[
+K_{n+1}=K_{l}\circ(K_{m-1}\circ f_{n+1})=(K_{l}\circ K_{m-1})\circ f_{n+1}
+\]
+
+But, $K_{l}\circ K_{m-1}$ is itself an expression of length $n$,
+so, by the induction hypothesis, 
+\[
+K_{l}\circ K_{m-1}=(\dots(f_{1}\circ f_{2})\circ f_{3})\circ\dots)\circ f_{n}
+\]
+
+Finally, 
+\[
+K_{n+1}=(\dots(f_{1}\circ f_{2})\circ f_{3})\circ\dots)\circ f_{n})\circ f_{n+1}
+\]
+ which completes the induction step. $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\citet[Ex-4.2]{aluffi} Given a set $S$ and a relation $\sim$ defined
+on $S$, define the category $\catC$ as such: $\Obj(\catC)=S$ and
+given objects $a,b\in S,$if $a\sim b$ then there is a morphism $a\overset{f}{\longrightarrow}b\in\Hom_{\catC}(a,b)$
+given by $f=(a,b)$ and so $\Hom_{\catC}(a,b)=\{(a,b)\}$ and if $a$
+and $b$ are not related by $\sim$ then $\Hom_{\catC}(a,b)=\emptyset$.
+For what conditions on $\sim$ is $C$ a groupoid? 
+\end{xca*}
+\begin{sol*}
+We claim that if $\sim$ is an equivalence relation then $\catC$
+is a groupoid. Indeed, we saw that $\catC$ is a category if $\sim$
+is reflexive and transitive. If $\sim$ is also symmetric, that is,
+if for any $a,b\in S,$ $a\sim b$ then $b\sim a$. Indeed in this
+case, every morphism $f:a\to b$ has the left inverse $g:b\to a$
+given as \textbf{$(b,a)$ }so that \textbf{$gf=(b,a)(a,b)=(a,a)=1_{a}.$
+}Similarly, $f:a\to b$ has the right inverse $g=(b,a)$ so that $(a,b)(b,a)=(b,b)=1_{b}.$
+$\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\citet[Ex-4.3]{aluffi} Let $A,B$ be objects of a category $\catC$,
+and let $f\in\Hom_{\catC}(A,B)$ be a morphism. 
+\end{xca*}
+\begin{itemize}
+\item Prove that if $f$ has a right inverse, then $f$ is an epimorphism. 
+\item Find an epimorphism without a right inverse. 
+\end{itemize}
+\begin{sol*}
+Suppose a morphism $f:A\to B$ between objects $A,B\in\Obj(\catC)$
+has a right inverse $g:B\to A$ so that $fg=1_{B}.$ Then, Fix an
+object $Z$ and a pair of morphisms $\alpha',\alpha'':B\to Z$ in
+$\catC$ so that $\alpha'\circ f=\alpha''\circ f$. This implies that
+$\alpha'\circ f\circ g=\alpha''\circ f\circ g$ which implies that
+$\alpha'\circ1_{B}=\alpha''\circ1_{B}$ and therefore $\alpha'=\alpha''$. 
+
+Just take the morphism $(2,3)$ in the category given in Eg-3.3. Any
+right inverse should make it so that $(2,3)\circ g=(3,3)$ so only
+$(3,2)$ is a choice but this is not a morphism that makes sense in
+this category.$\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\citet[Ex-4.4]{aluffi} Can you define a subcategory $\catC_{\text{nonmono}}$
+of $\catC$ by restricting to morphisms that are \emph{not }monomorphisms? 
+\end{xca*}
+\begin{sol*}
+If $\catC$ is the category in Eg-3.3 then every morphism is \emph{monic.}
+In that case the set $\Hom_{\catC_{\text{nonmono}}}(a,a)$ for any
+$a\in\Obj(\catC)$ is always empty because even $1_{A}$ is monic. 
+
+It might be worth thinking about whether we can do this if we do admit
+$1_{A}$ to every $\Hom_{\catC_{\text{nonmono}}}(a,a)$ in $\catC_{\text{nonmono}}$.
+Perhaps we might have to look at some examples like $\mathsf{Grp}$
+or $\mathsf{CRing}.$ 
+\end{sol*}
+\begin{xca*}
+\citet[Ex-4.5]{aluffi} Give a concrete description of mono and epi
+morphisms in the category $\mathsf{MSet}$ you constructed in Ex-3.9.
+\end{xca*}
+\begin{sol*}
+TODO 
+\end{sol*}
+%
+\begin{thebibliography}{Paolo Aluffi(2009)}
+\bibitem[Paolo Aluffi(2009)]{aluffi} 
 
 \end{thebibliography}
 

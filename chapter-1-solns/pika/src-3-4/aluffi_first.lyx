@@ -353,9 +353,11 @@ graphicboxes
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
+\cite_engine biblatex-natbib
 \cite_engine_type authoryear
 \biblio_style plainnat
+\biblatex_bibstyle authoryear
+\biblatex_citestyle authoryear
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -2504,6 +2506,11 @@ We choose to indicate the morphism
 
 .
  This might not be a bit tricky to deal with initially but it does make writing the proof quite more convenient.
+ 
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -2600,6 +2607,10 @@ is the obvious candidate.
 
  and we are done.
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -2657,6 +2668,10 @@ which means that
 \end_inset
 
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -2701,6 +2716,10 @@ Every
 
  is not reflexive.
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -2794,6 +2813,10 @@ Simply put,
 
 .
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -2930,6 +2953,10 @@ That it is a full subcategory of
 
  is by definition.
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -3090,6 +3117,10 @@ The matrix of 0 rows and 0 columns can represent a linear operator on the trivia
 
  which has dimension 0.
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Exercise*
@@ -3814,6 +3845,1051 @@ Next,
 .
  This completes the proof.
  
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.9"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Define a morphism between multisets,
+ obtaining a category 
+\begin_inset Formula $\mathsf{MSet}$
+\end_inset
+
+ containing a copy of 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ as a full subcategory.
+ Which objects in 
+\begin_inset Formula $\mathsf{MSet}$
+\end_inset
+
+ determine ordinary multisets defined in 
+\begin_inset Formula $2.2$
+\end_inset
+
+ and how?
+ What does a morphsim of multiset look like here?
+ 
+\end_layout
+
+\begin_layout Solution*
+TODO 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-3.10"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Since the objects of a category 
+\begin_inset Formula $\catC$
+\end_inset
+
+ are not necessarily sets,
+ it is not clear how to make sense of a notion of 'subobjects' in general.
+ In some situations,
+ it does make sense to talk about subobjects,
+ and the subobjects of any given object A in 
+\begin_inset Formula $\catC$
+\end_inset
+
+ are in one-to-one correspondence with the morphism 
+\begin_inset Formula $A\to\Omega$
+\end_inset
+
+ for a fixed,
+ special object 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ of 
+\begin_inset Formula $\catC$
+\end_inset
+
+,
+ called a subobject classifier.
+ Show that 
+\begin_inset Formula $\mathsf{Set}$
+\end_inset
+
+ has a subobject classifier.
+ 
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Fix 
+\begin_inset Formula $\Omega\coloneqq\{0,1\}\in\Obj(\mathsf{Set})$
+\end_inset
+
+.
+ Clearly every subobject of a set 
+\begin_inset Formula $A$
+\end_inset
+
+ in 
+\begin_inset Formula $\Obj(\mathsf{Set})$
+\end_inset
+
+ should be its subset and every subset 
+\begin_inset Formula $B$
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ can be identified by its indicator 
+\begin_inset Formula $B\to\Omega,b\mapsto1$
+\end_inset
+
+ if element 
+\begin_inset Formula $b$
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ satisifes 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ and 
+\begin_inset Formula $b\mapsto0$
+\end_inset
+
+ otherwise.
+ The set of subobjects of 
+\begin_inset Formula $A$
+\end_inset
+
+ should be the 
+\begin_inset Formula $\powerset(A)$
+\end_inset
+
+ so we will establish a bijection 
+\begin_inset Formula $f:\powerset(A)\to\{0,1\}^{A}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+This bijection will be given by the map 
+\begin_inset Formula $B\mapsto\one_{B}$
+\end_inset
+
+ where 
+\begin_inset Formula $\one_{B}$
+\end_inset
+
+ is the indicator of the set 
+\begin_inset Formula $B$
+\end_inset
+
+ in 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ This map is injective because 
+\begin_inset Formula $\one_{C}=\one_{B}$
+\end_inset
+
+ says an element 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $x\in C$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $x\in B$
+\end_inset
+
+.
+ So,
+ 
+\begin_inset Formula $C=B$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+For surjectivity,
+ suppose we are given a map 
+\begin_inset Formula $g\in\{0,1\}^{A}$
+\end_inset
+
+.
+ We will find a subset 
+\begin_inset Formula $B\subseteq A$
+\end_inset
+
+ so that 
+\begin_inset Formula $f(B)=g$
+\end_inset
+
+.
+ Set 
+\begin_inset Formula $B\coloneqq g^{-1}(1)$
+\end_inset
+
+.
+ Then,
+ 
+\begin_inset Formula $f(B)=\one_{B}.$
+\end_inset
+
+ If we show that 
+\begin_inset Formula $\one_{B}=g$
+\end_inset
+
+ on 
+\begin_inset Formula $A$
+\end_inset
+
+ then we are done.
+ So,
+ take any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $a\in B$
+\end_inset
+
+ then 
+\begin_inset Formula $\one_{B}(a)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $g(a)=1$
+\end_inset
+
+ because 
+\begin_inset Formula $a\in g^{-1}(1)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $a\in A\setminus B$
+\end_inset
+
+ then 
+\begin_inset Formula $\one_{B}(a)=0$
+\end_inset
+
+ while 
+\begin_inset Formula $g(a)=0$
+\end_inset
+
+ because 
+\begin_inset Formula $a\notin g^{-1}(1)$
+\end_inset
+
+ and every point of 
+\begin_inset Formula $A$
+\end_inset
+
+ must map under 
+\begin_inset Formula $g$
+\end_inset
+
+ to either 0 or 1.
+ Therefore,
+ 
+\begin_inset Formula $g=\one_{B}$
+\end_inset
+
+ and so 
+\begin_inset Formula $f(B)=\one_{B}=g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+This shows that 
+\begin_inset Formula $\{0,1\}$
+\end_inset
+
+ is a subobject classifier for 
+\begin_inset Formula $\mathsf{Set}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If in a set 
+\begin_inset Formula $S$
+\end_inset
+
+ we equip it by the equality relation 
+\begin_inset Formula $\sim\coloneqq=$
+\end_inset
+
+ then the category 
+\begin_inset Formula $\catC$
+\end_inset
+
+ whose objects are 
+\begin_inset Formula $\Obj(\catC)=S$
+\end_inset
+
+ and morphisms are simply identities 
+\begin_inset Formula $(a,a)$
+\end_inset
+
+ for every object 
+\begin_inset Formula $a\in S$
+\end_inset
+
+ (all the morphisms are identities because no 
+\begin_inset Formula $a\sim b$
+\end_inset
+
+ for distinct 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+in 
+\begin_inset Formula $S$
+\end_inset
+
+).
+ This is a catetgory in which every morphism is an isomorphism because theyre all identity.
+ 
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-4.1"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Suppose we are given 
+\begin_inset Formula $n$
+\end_inset
+
+ different morphisms 
+\begin_inset Formula $f_{1},\dots,f_{n}$
+\end_inset
+
+ so that 
+\begin_inset Formula $f_{k}\circ f_{k+1}$
+\end_inset
+
+ is always well defined for 
+\begin_inset Formula $k=1,\dots,n-1$
+\end_inset
+
+.
+ Then,
+ any valid expression involving parenthesis 
+\begin_inset Formula $($
+\end_inset
+
+,
+ 
+\begin_inset Formula $)$
+\end_inset
+
+,
+ elements 
+\begin_inset Formula $f_{1,}\dots,f_{k}$
+\end_inset
+
+ and the composition operator 
+\begin_inset Formula $\circ$
+\end_inset
+
+ is always independent of the placement of the parenthesis.
+ 
+\end_layout
+
+\begin_layout Solution*
+Let us denote by 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ a well formed expression of length 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ By this we mean that there are 
+\begin_inset Formula $k$
+\end_inset
+
+ morphisms 
+\begin_inset Formula $f_{1},\dots,f_{k}$
+\end_inset
+
+ in 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $k-1$
+\end_inset
+
+ composition operators 
+\begin_inset Formula $\circ$
+\end_inset
+
+ and an arbitrary number of appropriately nested parenthesis.
+ 
+\end_layout
+
+\begin_layout Solution*
+It suffices to show that any 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ can be equivalently written in the form 
+\begin_inset Formula $(\dots(f_{1}\circ f_{2})\circ f_{3})\circ f_{4})\circ\dots)\circ f_{k-1})\circ f_{k}$
+\end_inset
+
+ which allows us to speak of the unique legal expression involving 
+\begin_inset Formula $k$
+\end_inset
+
+ morphisms 
+\begin_inset Formula $f_{1},\dots,f_{k}$
+\end_inset
+
+ and we can simply write that as 
+\begin_inset Formula $f_{1}\circ f_{2}\circ\dots\circ f_{k}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Solution*
+We proceed by strong induction on 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+For the base case of 
+\begin_inset Formula $n=3$
+\end_inset
+
+,
+ 
+\begin_inset Formula $f_{1}\circ(f_{2}\circ f_{3})=(f_{1}\circ f_{2})\circ f_{3}$
+\end_inset
+
+ is simply the associativity of 
+\begin_inset Formula $\circ$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+Our induction hypothesis is that 
+\begin_inset Formula $K_{k}=(\dots(f_{1}\circ f_{2})\circ f_{3})\circ f_{4})\circ\dots)\circ f_{n-1})\circ f_{n}$
+\end_inset
+
+ for all expressions 
+\begin_inset Formula $K_{k}$
+\end_inset
+
+ of length 
+\begin_inset Formula $k\in\bZ_{>0}$
+\end_inset
+
+ with 
+\begin_inset Formula $3\leq k\leq n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+Now let 
+\begin_inset Formula $K_{n+1}$
+\end_inset
+
+ have length 
+\begin_inset Formula $n+1$
+\end_inset
+
+.
+ Then,
+ there are 
+\begin_inset Formula $l,m\in\bZ_{>0}$
+\end_inset
+
+ such that 
+\begin_inset Formula $l+m=n+1$
+\end_inset
+
+ and expressions 
+\begin_inset Formula $K_{l}$
+\end_inset
+
+ and 
+\begin_inset Formula $K_{m}$
+\end_inset
+
+ such that 
+\begin_inset Formula $K_{n+1}=K_{l}\circ K_{m}.$
+\end_inset
+
+ Now,
+ there are two cases:
+ 
+\end_layout
+
+\begin_layout Solution*
+Case 1:
+ 
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+ Then,
+ 
+\begin_inset Formula $l=n$
+\end_inset
+
+,
+ 
+\begin_inset Formula $K_{m}=f_{n+1}$
+\end_inset
+
+.
+ So,
+ by the induction hypothesis 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+K_{l}=(\dots(f_{1}\circ f_{2})\circ\dots)\circ f_{n-1})\circ f_{n}
+\]
+
+\end_inset
+
+ Consequently,
+ 
+\begin_inset Formula 
+\[
+K_{n+1}=(\dots(f_{1}\circ f_{2})\circ\dots)\circ f_{n-1})\circ f_{n})\circ f_{n+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Case 2:
+ m > 1.
+ By the induction hypothesis,
+ 
+\begin_inset Formula $K_{m}$
+\end_inset
+
+ can be written in the form 
+\begin_inset Formula $K_{m}=K_{m-1}\circ f_{n+1}$
+\end_inset
+
+,
+ and so 
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+K_{n+1}=K_{l}\circ(K_{m-1}\circ f_{n+1})=(K_{l}\circ K_{m-1})\circ f_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+But,
+ 
+\begin_inset Formula $K_{l}\circ K_{m-1}$
+\end_inset
+
+ is itself an expression of length 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ so,
+ by the induction hypothesis,
+ 
+\begin_inset Formula 
+\[
+K_{l}\circ K_{m-1}=(\dots(f_{1}\circ f_{2})\circ f_{3})\circ\dots)\circ f_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Finally,
+ 
+\begin_inset Formula 
+\[
+K_{n+1}=(\dots(f_{1}\circ f_{2})\circ f_{3})\circ\dots)\circ f_{n})\circ f_{n+1}
+\]
+
+\end_inset
+
+ which completes the induction step.
+ 
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-4.2"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Given a set 
+\begin_inset Formula $S$
+\end_inset
+
+ and a relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+ defined on 
+\begin_inset Formula $S$
+\end_inset
+
+,
+ define the category 
+\begin_inset Formula $\catC$
+\end_inset
+
+ as such:
+ 
+\begin_inset Formula $\Obj(\catC)=S$
+\end_inset
+
+ and given objects 
+\begin_inset Formula $a,b\in S,$
+\end_inset
+
+if 
+\begin_inset Formula $a\sim b$
+\end_inset
+
+ then there is a morphism 
+\begin_inset Formula $a\overset{f}{\longrightarrow}b\in\Hom_{\catC}(a,b)$
+\end_inset
+
+ given by 
+\begin_inset Formula $f=(a,b)$
+\end_inset
+
+ and so 
+\begin_inset Formula $\Hom_{\catC}(a,b)=\{(a,b)\}$
+\end_inset
+
+ and if 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are not related by 
+\begin_inset Formula $\sim$
+\end_inset
+
+ then 
+\begin_inset Formula $\Hom_{\catC}(a,b)=\emptyset$
+\end_inset
+
+.
+ For what conditions on 
+\begin_inset Formula $\sim$
+\end_inset
+
+ is 
+\begin_inset Formula $C$
+\end_inset
+
+ a groupoid?
+ 
+\end_layout
+
+\begin_layout Solution*
+We claim that if 
+\begin_inset Formula $\sim$
+\end_inset
+
+ is an equivalence relation then 
+\begin_inset Formula $\catC$
+\end_inset
+
+ is a groupoid.
+ Indeed,
+ we saw that 
+\begin_inset Formula $\catC$
+\end_inset
+
+ is a category if 
+\begin_inset Formula $\sim$
+\end_inset
+
+ is reflexive and transitive.
+ If 
+\begin_inset Formula $\sim$
+\end_inset
+
+ is also symmetric,
+ that is,
+ if for any 
+\begin_inset Formula $a,b\in S,$
+\end_inset
+
+ 
+\begin_inset Formula $a\sim b$
+\end_inset
+
+ then 
+\begin_inset Formula $b\sim a$
+\end_inset
+
+.
+ Indeed in this case,
+ every morphism 
+\begin_inset Formula $f:a\to b$
+\end_inset
+
+ has the left inverse 
+\begin_inset Formula $g:b\to a$
+\end_inset
+
+ given as 
+\series bold
+
+\begin_inset Formula $(b,a)$
+\end_inset
+
+ 
+\series default
+so that 
+\series bold
+
+\begin_inset Formula $gf=(b,a)(a,b)=(a,a)=1_{a}.$
+\end_inset
+
+ 
+\series default
+Similarly,
+ 
+\begin_inset Formula $f:a\to b$
+\end_inset
+
+ has the right inverse 
+\begin_inset Formula $g=(b,a)$
+\end_inset
+
+ so that 
+\begin_inset Formula $(a,b)(b,a)=(b,b)=1_{b}.$
+\end_inset
+
+ 
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-4.3"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $A,B$
+\end_inset
+
+ be objects of a category 
+\begin_inset Formula $\catC$
+\end_inset
+
+,
+ and let 
+\begin_inset Formula $f\in\Hom_{\catC}(A,B)$
+\end_inset
+
+ be a morphism.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prove that if 
+\begin_inset Formula $f$
+\end_inset
+
+ has a right inverse,
+ then 
+\begin_inset Formula $f$
+\end_inset
+
+ is an epimorphism.
+ 
+\end_layout
+
+\begin_layout Itemize
+Find an epimorphism without a right inverse.
+ 
+\end_layout
+
+\begin_layout Solution*
+Suppose a morphism 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ between objects 
+\begin_inset Formula $A,B\in\Obj(\catC)$
+\end_inset
+
+ has a right inverse 
+\begin_inset Formula $g:B\to A$
+\end_inset
+
+ so that 
+\begin_inset Formula $fg=1_{B}.$
+\end_inset
+
+ Then,
+ Fix an object 
+\begin_inset Formula $Z$
+\end_inset
+
+ and a pair of morphisms 
+\begin_inset Formula $\alpha',\alpha'':B\to Z$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC$
+\end_inset
+
+ so that 
+\begin_inset Formula $\alpha'\circ f=\alpha''\circ f$
+\end_inset
+
+.
+ This implies that 
+\begin_inset Formula $\alpha'\circ f\circ g=\alpha''\circ f\circ g$
+\end_inset
+
+ which implies that 
+\begin_inset Formula $\alpha'\circ1_{B}=\alpha''\circ1_{B}$
+\end_inset
+
+ and therefore 
+\begin_inset Formula $\alpha'=\alpha''$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Solution*
+Just take the morphism 
+\begin_inset Formula $(2,3)$
+\end_inset
+
+ in the category given in Eg-3.3.
+ Any right inverse should make it so that 
+\begin_inset Formula $(2,3)\circ g=(3,3)$
+\end_inset
+
+ so only 
+\begin_inset Formula $(3,2)$
+\end_inset
+
+ is a choice but this is not a morphism that makes sense in this category.
+\begin_inset Formula $\hfill\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-4.4"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Can you define a subcategory 
+\begin_inset Formula $\catC_{\text{nonmono}}$
+\end_inset
+
+ of 
+\begin_inset Formula $\catC$
+\end_inset
+
+ by restricting to morphisms that are 
+\emph on
+not 
+\emph default
+monomorphisms?
+ 
+\end_layout
+
+\begin_layout Solution*
+If 
+\begin_inset Formula $\catC$
+\end_inset
+
+ is the category in Eg-3.3 then every morphism is 
+\emph on
+monic.
+
+\emph default
+ In that case the set 
+\begin_inset Formula $\Hom_{\catC_{\text{nonmono}}}(a,a)$
+\end_inset
+
+ for any 
+\begin_inset Formula $a\in\Obj(\catC)$
+\end_inset
+
+ is always empty because even 
+\begin_inset Formula $1_{A}$
+\end_inset
+
+ is monic.
+ 
+\end_layout
+
+\begin_layout Solution*
+It might be worth thinking about whether we can do this if we do admit 
+\begin_inset Formula $1_{A}$
+\end_inset
+
+ to every 
+\begin_inset Formula $\Hom_{\catC_{\text{nonmono}}}(a,a)$
+\end_inset
+
+ in 
+\begin_inset Formula $\catC_{\text{nonmono}}$
+\end_inset
+
+.
+ Perhaps we might have to look at some examples like 
+\begin_inset Formula $\mathsf{Grp}$
+\end_inset
+
+ or 
+\begin_inset Formula $\mathsf{CRing}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Ex-4.5"
+key "aluffi"
+literal "false"
+
+\end_inset
+
+ Give a concrete description of mono and epi morphisms in the category 
+\begin_inset Formula $\mathsf{MSet}$
+\end_inset
+
+ you constructed in Ex-3.9.
+\end_layout
+
+\begin_layout Solution*
+TODO 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
@@ -3821,11 +4897,11 @@ Next,
 LatexCommand bibitem
 label "Paolo Aluffi(2009)"
 key "aluffi"
-literal "false"
+literal "true"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_body
