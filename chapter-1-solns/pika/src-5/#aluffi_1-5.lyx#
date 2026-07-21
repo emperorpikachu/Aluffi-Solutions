@@ -831,10 +831,6 @@ That this construction defines a category is obvious so we will not bother with 
 
 (a,b).
  
-\begin_inset Formula $\hfill\blacksquare$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Exercise*
@@ -975,11 +971,6 @@ Now,
  Once again,
  by uniqueness we find that 
 \begin_inset Formula $fg=1_{A\times B}.$
-\end_inset
-
- This completes the proof.
- 
-\begin_inset Formula $\hfill\blacksquare$
 \end_inset
 
  
