@@ -1,9 +1,16 @@
 %% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[american]{amsart}
+\documentclass[12pt,american]{extarticle}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2cm,rmargin=3cm}
+\usepackage{setspace}
+\onehalfspacing
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
@@ -311,12 +318,281 @@
 
 \makeatother
 
+\theoremstyle{definition}
+\newtheorem*{xca*}{\protect\exercisename}
+\newtheorem*{sol*}{\protect\solutionname}
 \usepackage{babel}
-\usepackage[style=authoryear,backend=bibtex8]{biblatex}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\solutionname}{Solution}
+
 \begin{document}
 \title{Aluffi 1-5 solutions}
 \author{pika}
 
 \maketitle
+\include{macros}
+\begin{xca*}
+\cite[Ch-1, Ex-5.1]{aluffi}\label{aluffi51} Prove that a final object
+in a category $\catC$ is initial in the opposite category $\catC^{\mathsf{op}}$. 
+\end{xca*}
+\begin{sol*}
+Suppose $I$ is the final object in $\catC.$ Then, take any object
+$Z\in\catC^{\mathsf{op}}.$ Since there is always a unique morphism
+$Z\to I$ in $\catC$, there is a unique morphism $I\to Z$ in $\catC^{\mathsf{op}}.$
+Siince $Z\in\mathsf{C}^{\mathsf{op}}$ was arbitrary, this proves
+that $I$ is the initial object in $\catC^{\mathsf{op}}$. $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.2]{aluffi} Prove that $\emptyset$ is the \emph{unique
+}initial object in $\mathsf{Set}$. 
+\end{xca*}
+\begin{sol*}
+Suppose $X\in\Obj(\mathsf{Set})$ is an initial object. Then, there
+is a unique morphism $X\to\emptyset$ which proves that $X=\emptyset.$$\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.3]{aluffi} Prove that final objects are unique up
+to isomorphisms. 
+\end{xca*}
+\begin{sol*}
+Suppose there are two final objects $F_{1},F_{2}$ in a category $\catC.$
+Then, since $F_{2}$ is final, we pick the unique morphism $f:F_{1}\to F_{2}$
+and since $F_{1}$ is final we consider the unique morphism $g:F_{2}\to F_{1}$.
+Then, notice that $fg=1_{F_{2}}$. This is because $F_{2}$ is final,
+so there is only a unique morphism $1_{F_{2}}:F_{2}\to F_{2}$ and
+$gf$ must be identical to this. By a similar argument we deduce that
+$gf=1_{F_{1}}.$ This completes the proof that any two final objects
+$F_{1}$ and $F_{2}$ are always isomorphic. $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.4]{aluffi} What are the final objects in the category
+of 'pointed sets' in Eg-3.8? Are they unique? 
+\end{xca*}
+\begin{sol*}
+Any singleton $\{*\}$ with the point $*$ is a final object. Indeed,
+given any object $(Z,z)$ in $\mathsf{Set}^{*}$ there is obviusly
+a morphism $\sigma:Z\to\{*\}$ so that $\sigma(z)=*$. This is clearly
+the constant map $Z\to\{*\}$. Any other singleton set $S$ with its
+point $s$ forming the pair $(S,s)$ would be a final object in this
+category so such a construction is not unique although obviosuly by
+a previous exercise it would be unique up to isomorphism. $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.5]{aluffi} What are the final objects in the category
+considered in Eg-5.3? 
+\end{xca*}
+\begin{sol*}
+The final object should be $(c:a\mapsto*,\{*\})$. Indeed, in this
+way, given any object $(f,Z)$ where $f$ agrees on equivalent points
+of $A$, we get a morphism $\sigma:(f,Z)\to(c,\{*\})$ that is constant
+in $Z$ (maps every point in $Z$ to $*$). Such a morphism is guaranteed
+to be unique. $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.6]{aluffi} Consider the category corresponding to
+Eg-3.3 by endowing the set $\bZ_{>0}$ of positive integers with the
+\emph{divisibility relation. }Thus, there is exactly one morphism
+$d\to m$ in this category if and only if $d$ divides $m$ without
+remainder; there is no morphism between $d$ and $m$ otherwise. Show
+that this category has products and coproducts. What are their conventional
+names? 
+\end{xca*}
+\begin{sol*}
+That this construction defines a category is obvious so we will not
+bother with proving that part. Notice that the $\gcd(a,b)$ divides
+both $a$ and $b$ so there are morphisms $\gcd(a,b)\to a,\gcd(a,b)\to b$.
+Next, given any other integer $z$ with pairs of morphisms $z\to a$
+and $z\to b$, there is a (unique by construction of this category)
+morhpism $z\to\gcd(a,b)$ simply by definition of $\gcd$(a,b). $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.8]{aluffi} Show that in every category $\catC$
+the products $A\times B$ and $B\times A$ are isomorphic, if they
+exist. 
+\end{xca*}
+\begin{sol*}
+Suppose $\catC$ is a category with objects $A,B$ so that the products
+$A\times B$ and $B\times A$ both exist. We denote the canonical
+projections by $p_{A}:A\times B\to A,p_{B}:A\times B\to B,p'_{B}:B\times A\to B,p'_{A}:B\times A\to A$.
+Next, by the universal property of $A\times B$, we get a unique morphism
+$f:B\times A\to A\times B$ so that $p_{A}f=p'_{A},p_{B}f=p'_{B}.$
+Next, by the universal property of $B\times A,$ there is a unique
+morphism $g:A\times B\to B\times A$ so that 
+\[
+p'_{B}g=p_{B},p'_{A}g=p_{A}
+\]
+
+Now, we see that $p_{A}f=p'_{A}gf=p'_{A}$ and $p_{B}f=p'_{B}gf=p'_{B}.$
+Also, we see that $p'_{B}g=p_{B}fg=p_{B}$ and $p'_{A}g=p_{A}fg=p_{A}.$
+Notice that $1_{B\times A}$ is a morphism $B\times A\to B\times A$
+that satisfies the first two relations the same way as $gf$. By uniqueness,
+we get that $gf=1_{B\times A}$. Similarly, $1_{A\times B}$ is a
+morphism $A\times B\to A\times B$ that satisfies the third and the
+fourth commutativity relations above the same way as $fg$. Once again,
+by uniqueness we find that $fg=1_{A\times B}.$ This completes the
+proof. $\hfill\blacksquare$ 
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.9]{aluffi} Let $\catC$ be a category with products.
+Find a reasonable candidate for the universal property that the product
+$A\times B\times C$ of three objects of $\catC$ ought to satisfy,
+and prove that both $(A\times B)\times C$ and $A\times(B\times C)$
+satisfy this universal property. Deduce that $(A\times B)\times C$
+and $A\times(B\times C)$ are necessarily isomorphic. 
+\end{xca*}
+\begin{sol*}
+In any category $\catC$ in which binary products are defined, there
+exists an object $P\coloneqq\prod^{3}_{i=1}A_{i}$ and morphisms $(\pi_{i}:P\to A_{i})^{3}_{1}$
+so that for any object $Z\in\Obj(\catC)$ and family of morphisms
+$(\varphi_{i}:Z\to A_{i})^{3}_{1}$ there exists a uniquely defined
+morphism $\varphi:Z\to P$ so that the diagram below commutes for
+every $1\leq i\leq3$. 
+\end{sol*}
+% https://q.uiver.app/#q=WzAsMyxbMiwwLCJaIl0sWzIsMiwiUCJdLFswLDIsIkFfaSAiXSxbMCwyLCJcXHZhcnBoaV9pIiwyXSxbMSwyLCJcXHBpX2kiXSxbMCwxLCJcXHZhcnBoaSJdXQ==
+\[\begin{tikzcd}
+	&& Z \\
+	\\
+	{A_i } && P
+	\arrow["{\varphi_i}"', from=1-3, to=3-1]
+	\arrow["\varphi", from=1-3, to=3-3]
+	\arrow["{\pi_i}", from=3-3, to=3-1]
+\end{tikzcd}\]
+
+There are three such commutative diagrams for $i=1,2,3$ where $A_{1}=A,A_{2}=B,A_{3}=C$.
+The commutativity relations are as follows
+
+\[
+\pi_{i}\circ\varphi=\varphi_{i},\qquad1\leq i\leq3.
+\]
+
+We will only show that $(A_{1}\times A_{2})\times A_{3}$ satisfies
+this universal property. Indeed, notice that there are projections
+$\pi':(A_{1}\times A_{2})\times A_{3}\to(A_{1}\times A_{2})$ and
+$\pi_{3}:(A_{1}\times A_{2})\times A_{3}\to A_{3}$ Then, suppose
+$Z$ is any other object with morphisms $(\varphi_{i}:Z\to A_{i})^{3}_{1}$.
+Next, notice that there is a unique morhpism $\varphi_{1}\times\varphi_{2}:Z\to A_{1}\times A_{2}$
+by the universal property of the product $A_{1}\times A_{2}$ which
+satisfies 
+\[
+\pi'_{1}\circ(\varphi_{1}\times\varphi_{2})=\varphi_{1},
+\]
+\[
+\pi'_{2}\circ(\varphi_{1}\times\varphi_{2})=\varphi_{2}
+\]
+
+where $\pi'_{1}:(A_{1}\times A_{2})\to A_{1}$ and $\pi'_{2}:(A_{1}\times A_{2})\to A_{2}$
+are the canonical projections of the product $A_{1}\times A_{2}$
+to its factors $A_{1}$ and $A_{2}$ respectively.
+
+Next, due the the universal property of the binary product $(A_{1}\times A_{2})\times A_{3}$,
+there is a unique morphism $(\varphi_{1}\times\varphi_{2})\times\varphi_{3}:Z\to(A\times B)\times C$
+so that 
+
+\begin{align*}
+\pi'\circ((\varphi_{1}\times\varphi_{2})\times\varphi_{3})= & \varphi_{1}\times\varphi_{2},\\
+\pi_{3}\circ((\varphi_{1}\times\varphi_{2})\times\varphi_{3})= & \varphi_{3}
+\end{align*}
+
+We notice that $(A_{1}\times A_{2})\times A_{3}$ has projections
+to $A_{1}$ as $\pi_{1}\coloneqq\pi'_{1}\circ\pi'$, to $A_{2}$ as
+$\pi_{2}\coloneqq\pi'_{2}\circ\pi'$ and to $A_{3}$ as $\pi_{3}$.
+This tells us that 
+\begin{align*}
+\pi_{1}\circ((\varphi_{1}\times\varphi_{2})\times\varphi_{3})= & \pi'_{1}\circ(\varphi_{1}\times\varphi_{2})\\
+= & \varphi_{1}
+\end{align*}
+
+and 
+\begin{align*}
+\pi_{2}\circ((\varphi_{1}\times\varphi_{2})\times\varphi_{3}) & =\pi'_{2}\circ(\varphi_{1}\times\varphi_{2})\\
+ & =\varphi_{2}
+\end{align*}
+
+and the final equality is
+\[
+\pi_{3}\circ((\varphi_{1}\times\varphi_{2})\times\varphi_{3})=\varphi_{3}
+\]
+
+We simply define our $\varphi$ to be this morphism $(\varphi_{1}\times\varphi_{2})\times\varphi_{3}$
+and clearly from the above proof it is uniquely defined. 
+
+This completes the proof that $(A_{1}\times A_{2})\times A_{3}$ also
+satisfies the universal property of products of triplets. 
+
+For uniqueness, suppose $Z$ with the morphisms $(\rho_{i}:Z\to A_{i})^{3}_{1}$
+also satisfies the same universal property. Then, by universal property
+of $P$ there is a unique morphism $\varphi:Z\to P$ that satisfies
+$\pi_{i}\circ\varphi=\rho_{i}$ for every $1\leq i\leq3$. Again,
+by universal property of $Z$ there is a unique morphism $\varphi':P\to Z$
+so that $\rho_{i}\circ\varphi'=\pi_{i}$. We claim that $\varphi\circ\varphi'=1_{P}$
+and $\varphi'\circ\varphi=1_{Z}$. Notice that $\pi_{i}\circ(\varphi\circ\varphi')=\rho_{i}\circ\varphi'=\pi_{i}$.
+Again, by universal property of $P$ we find that $1_{P}$ is the
+unique morphism which satisfies $\pi_{i}\circ1_{P}=\pi_{i}$for every
+$1\leq i3$. This proves that $\varphi\circ\varphi'=1_{P}.$ Similarly,
+by invoking universal property of $Z$, we find that $1_{Z}$ is the
+unique morphism satisfiying $\rho_{i}\circ1_{Z}=\rho_{i}$ but this
+means that it must be identical to the morphism $\varphi'\circ\varphi$
+which also satisfies $\rho_{i}\circ(\varphi'\circ\varphi)=\pi_{i}\circ\varphi=\rho_{i}$.
+This completes the proof that $P$ is unique up to isomorphism. $\hfill\blacksquare$
+\begin{xca*}
+\cite[Ch-1, Ex-5.10]{aluffi} Push the enveloope a little further
+still, and define products and coproducts for families (i.e., indexed
+sets) of objects of a category. 
+
+Do these exist in $\mathsf{Set}.$ 
+\end{xca*}
+\begin{sol*}
+Suppose we are given a family of objects $(A_{i})_{i\in I}$ in a
+category $\catC$. An object $P=\prod_{I}A_{i}$ is said to be a product
+of the $A_{i}$ together with a family of morphisms $(\pi_{i}:P\to A_{i})_{i\in I}$
+if it satisfies the following universal property:
+
+Given any object $Z\in\Obj(C)$ and a family of morphisms $(\rho_{i}:Z\to A_{i})_{i\in I}$
+there exists a unique morphism $\varphi:Z\to P$ such that $\pi_{i}\circ\varphi=\rho_{i}$
+for every $i\in I$. Such a $P$ is uniquely determined up to isomorphisms. 
+
+I claim that given a family of sets $(A_{i})_{i\in I}$, their generalized
+cartesian product 
+\[
+\prod_{i\in I}A_{i}\coloneqq\biggl\{ f:I\to\bigcup_{i\in I}A_{i}\mid f(i)\in A_{i}\text{ for every }i\in I\biggr\}
+\]
+
+is the product. Notice there are projections $\pi_{i}:\prod_{i\in I}A_{i}\to A_{i}$
+for every $i\in I$ so that $\pi_{i}(f)=f(i)$. Given any object $C$
+with a family of functions $(\rho_{i}:C\to A_{i})_{i\in I}$ there
+exists a uniquely defined function $\varphi:C\to\prod_{i\in I}A_{i}$
+such that for every $i\in I$, $\pi_{i}\circ\varphi=\rho_{i}$. Indeed,
+simply define $\varphi(c)=f_{c}$ so that $f_{c}(i)=\rho_{i}(c)$.
+That $\varphi$ is well defined as a function and satisfies the commutativity
+relation for every $i\in I$ is obvious. We are left to show that
+$\varphi$ is uniquely defined. For this, suppose $\varphi'$ is another
+well defined map $C\to\prod_{i\in I}A_{i}$ so that $\pi_{i}\circ\varphi'=\rho_{i}$. 
+
+We will show that $\varphi=\varphi'$. For this, take $c\in C,$ then
+for all $i\in I$ we find that $(\varphi'(c))(i)=\pi_{i}(\varphi'(c))=\rho_{i}(c)=\pi_{i}(\varphi(c))=(\varphi(c))(i)$
+and this completes the proof of uniqueness of $\varphi.$ $\hfill\blacksquare$
+\end{sol*}
+\begin{xca*}
+\cite[Ch-1, Ex-5.11]{aluffi} Already did in a solution to some secion
+1.1/1.2 problem. 
+\end{xca*}
+%
+\begin{xca*}
+\cite[Ch-1, Ex-5.12]{aluffi} Define the notions of \emph{fibered
+products }and \emph{fibered coproducts,} as terminal objects of the
+categories $\catC_{\alpha,\beta},\catC^{\alpha,\beta}$ considered
+in Eg-3.10 by stating carefully the corresponding universal properties. 
+
+As it happens, $\mathsf{Set}$ has both fibered products and fibered
+coproducts. Define those objects 'concretely', in terms of naive set
+theory. 
+\end{xca*}
+\begin{sol*}
+TODO
+\end{sol*}
+\begin{thebibliography}{Aluffi, Algebra}
+\bibitem[Aluffi, Algebra]{aluffi}
+
+\end{thebibliography}
 
 \end{document}
