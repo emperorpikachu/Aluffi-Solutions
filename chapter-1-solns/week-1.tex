@@ -1,4 +1,5 @@
 \section{Naive Set theory}
+\emph{By: quickdoom}
 
 \exercise Russell's Paradox shows that na\"{\i}ve set theory's assumption of the unrestricted comprehension principle -- for any property $P$, the set $\{x: P(x)\}$ exists -- leads to a contradiction. Consider the property $P(x): x \in x$. The unrestricted comprehension prinicple tells us that the set $
 S = \{x : \sim P(x)\}$ exists. This is simply not possible, since we get $S \in S \iff S\not\in S$.\newline
@@ -14,3 +15,107 @@ To see this, note that if $S$ contains itself, then $S$ does not satisfy $\sim P
 \exercise The relation $\sim$ is reflexive since indeed, $a - a = 0\in \mathbb{Z}$ for all $a\in \mathbb{R}$. It is symmetric, since the negative of an integer is an integer. Indeed, $a\sim b \implies a-b = k_1 \implies b-a = -k_1$. It is transitive, since the sum of two integers is an integer. Indeed, if $a\sim b$, $b\sim c$, we have $a-b = k_1, b-c = k_2$ for some $k_1,k_2\in \mathbb{Z}$ which gives $a - c = k_1 + k_2\in\mathbb{Z}$. Hence, it is an equivalence relation. In exactly the same way, we get that the relation $(a_1,a_2) \approx (b_1,b_2)\iff a_1 - b_1\in\mathbb{Z}\text{ and }a_2 - b_2\in \mathbb{Z}$ is an equivalence relation.\newline
 As for finding ``compelling" descriptions, first relation can be seen geometrically as a `circle' in the sense that the set $\mathbb{R}/\sim$ can be identitfied with the set $\{e^{2\pi i x}\}$ via $[x]\mapsto e^{2\pi i x}$. It is important to note that since we are using the representative of the classes in defining our correspondence, that it is well defined. Similarly, the set $\mathbb{R}\times\mathbb{R}/\approx$ can be identitifed with a torus, via the same exponential map: $[(x,y)] \mapsto (e^{2\pi i x}, e^{2\pi i y})$ which one can again check is well defined.
 
+\section{Functions Between Sets}
+\emph{By: blanketism}
+
+\exercise The number of bijections from a set of size $n$ to itself is $n!$. Indeed, we can choose the image of the first element in $n$ ways, the image of the second element in $n-1$ ways, and so on. This gives us $n(n-1)(n-2)\cdots 1 = n!$ bijections.
+
+\exercise Let $f : A \to B$ be a function with $A \neq \varnothing$. Suppose that $f$ has a right-inverse $g : B \to A$ so that $f\circ g = \text{id}_B$. We claim that $f$ is surjective. Indeed, let $b\in B$. Then we have $f(g(b)) = b$ so that $b$ is in the image of $f$. Since $b$ was arbitrary, we have that $f$ is surjective.
+
+Now suppose that $f$ is surjective. We claim that $f$ has a right-inverse. By surjectivity of $f$, for all $b \in B$, there exists $a_b \in A$ such that $f(a_b) = b$. Define $g : B \to A$ by $g(b) = a_b$. Then we have $f(g(b)) = f(a_b) = b$ so that $f\circ g = \text{id}_B$. Hence, $f$ has a right-inverse. (Note that our choice of $a_b$ is dependent on the axiom of choice.)
+
+\exercise Let $f : A \to B$ be a bijection with inverse $f^{-1} : B \to A$. We claim that $f^{-1}$ is a bijection. Indeed, since $f$ is surjective, for all $a\in A$, there exists $b\in B$ such that $f(a) = b$. Then we have $f^{-1}(b) = f^{-1}(f(a)) = a$ so that $f^{-1}$ is surjective. Now suppose that $f^{-1}(b_1) = f^{-1}(b_2)$ for some $b_1,b_2\in B$. Then we have $f(f^{-1}(b_1)) = f(f^{-1}(b_2))$ which gives us $b_1 = b_2$ so that $f^{-1}$ is injective. Hence, $f^{-1}$ is a bijection.
+
+Now suppose that $f : A \to B$ and $g : B \to C$ are bijections. We claim that $g\circ f : A \to C$ is a bijection. Indeed, since $f$ is surjective, for all $c\in C$, there exists $b\in B$ such that $g(b) = c$. Since $g$ is surjective, there exists $a\in A$ such that $f(a) = b$. Then we have $(g\circ f)(a) = g(f(a)) = g(b) = c$ so that $g\circ f$ is surjective. Now suppose that $(g\circ f)(a_1) = (g\circ f)(a_2)$ for some $a_1,a_2\in A$. Then we have $g(f(a_1)) = g(f(a_2))$. Since $g$ is injective, we have $f(a_1) = f(a_2)$. Since $f$ is injective, we have $a_1 = a_2$. Hence, $g\circ f$ is injective. Thus, we have shown that the composition of two bijections is a bijection.
+
+\exercise We claim that the notion of isomorphism is an equivalence relation. Indeed, let $A,B,C$ be sets. Then we have the following:
+\begin{itemize}
+    \item Reflexivity: The identity map $\text{id}_A : A \to A$ is a bijection, so $A$ is isomorphic to itself.
+    \item Symmetry: If $f : A \to B$ is a bijection, then its inverse $f^{-1} : B \to A$ is also a bijection, so if $A$ is isomorphic to $B$, then $B$ is isomorphic to $A$.
+    \item Transitivity: If $f : A \to B$ and $g : B \to C$ are bijections, then their composition $g\circ f : A \to C$ is also a bijection, so if $A$ is isomorphic to $B$ and $B$ is isomorphic to $C$, then $A$ is isomorphic to $C$.
+\end{itemize}
+
+\exercise Analogous to a monomorphism, we can formulate the notion of an epimorphism as follows: A function $f : A \to B$ is an epimorphism (or epic), if the following holds:
+
+\begin{center}
+    for all sets $Z$ and all functions $g_1, g_2 : B \to Z$,
+
+    $g_1 \circ f = g_2 \circ f \implies g_1 = g_2$.
+\end{center}
+
+We now prove a result analogous to Proposition 2.3 for epimorphisms: A function is surjective if and only if it is an epimorphism. Indeed, let $f : A \to B$ be surjective. We claim that $f$ is an epimorphism. Let $g_1, g_2 : B \to Z$ be functions such that $g_1 \circ f = g_2 \circ f$. We want to show that $g_1 = g_2$. Since $f$ is surjective, it has a right-inverse $h : B \to A$ such that $f\circ h = \text{id}_B$. Then we have
+\[g_1 \circ (f \circ h) = (g_1 \circ f) \circ h = (g_2 \circ f) \circ h = g_2 \circ (f \circ h)\]
+Since $h$ is a right inverse of $f$, we have $f \circ h = \text{id}_B$, so we get $g_1 \circ \text{id}_B = g_2 \circ \text{id}_B$, which gives us $g_1 = g_2$. Hence, $f$ is an epimorphism.
+
+Now suppose that $f : A \to B$ is an epimorphism. We claim that $f$ is surjective. Suppose not, then there exists $b_0 \in B$ such that $b_0 \not\in f(A)$. Define two functions $g_1, g_2 : B \to \{0,1\}$ by
+\[g_1(b) = \begin{cases}
+    0 & \text{if } b = b_0 \\
+    1 & \text{otherwise}
+\end{cases} \quad \text{and} \quad g_2(b) = 1 \text{ for all } b \in B.\]
+Then we have $g_1 \circ f = g_2 \circ f$, since $b_0 \not\in f(A)$, but $g_1 \neq g_2$, which contradicts the assumption that $f$ is an epimorphism. Hence, $f$ must be surjective.
+
+\exercise Recall that a section of a surjection $f : A \to B$ is a right-inverse of $f$, i.e a function $g : B \to A$ such that $f\circ g = \text{id}_B$. Given $f : A \to B$, define the map $s : A \to A \times B$ as
+\[s(a) = (a, f(a)).\]
+Then for all $a \in A$, we have $\pi_A(s(a)) = \pi_A(a, f(a)) = a$, so that $\pi_A \circ s = \text{id}_A$. Hence, $s$ is a section of $\pi_A$.
+
+Conversely, given a section $s : A \to A \times B$ of $\pi_A$, we can define a function $f : A \to B$ by $f(a) = \pi_B(s(a))$. Then for all $a \in A$, we have $\pi_B(s(a)) = f(a)$, so that $s(a) = (a, f(a))$. Hence, we can recover the original function $f$ from the section $s$.
+
+\exercise Let $f : A \to B$ be a function with graph $\Gamma_f$. To see that $\Gamma_f$ is isomorphic to $A$, we can define a function $g : A \to \Gamma_f$ by $g(a) = (a, f(a))$. Then for all $a_1, a_2 \in A$, we have
+\[g(a_1) = g(a_2) \iff (a_1, f(a_1)) = (a_2, f(a_2)) \iff a_1 = a_2 \text{ and } f(a_1) = f(a_2) \iff a_1 = a_2,\]
+so that $g$ is injective. Now let $(a, b) \in \Gamma_f$. Then we have $b = f(a)$, so that $g(a) = (a, f(a)) = (a, b)$. Hence, $g$ is surjective. Therefore, $g$ is a bijection, and we have shown that $\Gamma_f$ is isomorphic to $A$.
+
+\exercise Let $f : \mathbb R \to \mathbb C$ be defined by $f : r \mapsto e^{2\pi i r}$. Then the canonical decomposition of $f$ is given by the following diagram:
+\begin{center}
+    \begin{tikzcd}
+    \mathbb R
+        \arrow[rrr, bend left=30, "f"]
+        \arrow[r, two heads]
+    & \mathbb R/{\sim}
+        \arrow[r, "\tilde{f}"', "\sim"]
+    & \operatorname{im} f
+        \arrow[r, hook]
+    & \mathbb C
+    \end{tikzcd}
+\end{center}
+We now describe all the terms in the canonical decomposition:
+\begin{itemize}
+    \item The equivalence relation $\sim$ is defined by $r_1 \sim r_2 \iff f(r_1) = f(r_2) \iff e^{2\pi i r_1} = e^{2\pi i r_2} \iff r_1 - r_2 \in \mathbb Z$. Hence, the equivalence classes are given by $[r] = \{r + n : n \in \mathbb Z\}$ for each $r \in \mathbb R$.
+    \item The quotient set $\mathbb R/{\sim}$ is the set of all equivalence classes, which can be identified with the interval $[0, 1)$ by mapping each equivalence class $[r]$ to its unique representative in $[0, 1)$.
+    \item The map $\tilde{f} : \mathbb R/{\sim} \to \operatorname{im} f$ is defined by $\tilde{f}([r]) = f(r) = e^{2\pi i r}$. This map is well-defined, since if $[r_1] = [r_2]$, then $r_1 - r_2 \in \mathbb Z$, and hence $e^{2\pi i r_1} = e^{2\pi i r_2}$.
+    \item The image $\operatorname{im} f$ is the set of all complex numbers of the form $e^{2\pi i r}$ for $r \in \mathbb R$, which is the unit circle in the complex plane, denoted by $S^1 = \{z \in \mathbb C : |z| = 1\}$.
+    \item The inclusion map $\operatorname{im} f \hookrightarrow \mathbb C$ is the natural inclusion of the unit circle into the complex plane.
+\end{itemize}
+Moreover, this exercise is exactly the same as Exercise 1.6.
+
+\exercise Define sets $A', A'', B', B''$ such that $A' \cong A''$, $B' \cong B''$, and $A' \cap B' = A'' \cap B'' = \varnothing$. We claim that $f : A' \cup B' \to A'' \cup B''$ defined by
+\[f(x) = \begin{cases}
+    f_1(x) & \text{if } x \in A' \\
+    f_2(x) & \text{if } x \in B'
+\end{cases}\]
+is a bijection, where $f_1 : A' \to A''$ and $f_2 : B' \to B''$ are bijections. Indeed, let $x_1, x_2 \in A' \cup B'$ such that $f(x_1) = f(x_2)$. We have the following cases:
+\begin{itemize}
+    \item If $x_1, x_2 \in A'$, then $f_1(x_1) = f_1(x_2)$, and since $f_1$ is a bijection, we have $x_1 = x_2$.
+    \item If $x_1, x_2 \in B'$, then $f_2(x_1) = f_2(x_2)$, and since $f_2$ is a bijection, we have $x_1 = x_2$.
+\end{itemize}
+Therefore, $f$ is injective. Now let $y \in A'' \cup B''$. We have the following cases:
+\begin{itemize}
+    \item If $y \in A''$, then there exists $x \in A'$ such that $f_1(x) = y$, and hence $f(x) = y$.
+    \item If $y \in B''$, then there exists $x \in B'$ such that $f_2(x) = y$, and hence $f(x) = y$.
+\end{itemize}
+Therefore, $f$ is surjective, and hence a bijection. One should note that the cases of $x_1, x_2$ and $y$ being in different sets are impossible, since $A' \cap B' = A'' \cap B'' = \varnothing$.
+
+From this, we see that the operation $A \invamalg B$ is well-defined up to isomorphism, since if $A' \cong A''$ and $B' \cong B''$, then $A' \invamalg B' \cong A'' \invamalg B''$.
+
+\exercise Let $A$ and $B$ be sets. To see that $|B^A| = |B|^{|A|}$, let $|A| = m$ and $|B| = n$. Then we have that $B^A$ is the set of all functions from $A$ to $B$. For each element of $A$, there are $n$ choices for its image in $B$. Since there are $m$ elements in $A$, the total number of functions from $A$ to $B$ is given by the product of the number of choices for each element, which is
+\[|B^A| = n^m = |B|^{|A|}.\]
+
+\exercise Let $2^A$ denote the set of functions from $A$ to $\{0,1\}$. We claim that $2^A \cong \mathscr{P}(A)$. Indeed, we can define a bijection $f : 2^A \to \mathscr{P}(A)$ by
+\[f(g) = \{a \in A : g(a) = 1\}.\]
+To see that $f$ is injective, let $g_1, g_2 \in 2^A$ such that $f(g_1) = f(g_2)$. Then we have
+\[\{a \in A : g_1(a) = 1\} = \{a \in A : g_2(a) = 1\}.\]
+This implies that for all $a \in A$, $g_1(a) = 1$ if and only if $g_2(a) = 1$, and hence $g_1 = g_2$. Therefore, $f$ is injective. To see that $f$ is surjective, let $S \in \mathscr{P}(A)$. We can define a function $g : A \to \{0,1\}$ by
+\[g(a) = \begin{cases}
+    1 & \text{if } a \in S \\
+    0 & \text{if } a \not\in S
+\end{cases}\]
+Then we have $f(g) = S$, and hence $f$ is surjective.
